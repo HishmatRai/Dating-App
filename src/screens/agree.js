@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView, TouchableOpacity } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
@@ -71,8 +72,18 @@ const Agree = (props) => {
                 </View>
 
                 {/* <<<<<<<< Button <<<<<<<< */}
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles._button_txt}>I Agree</Text>
+                <TouchableOpacity style={styles.button}
+                    onPress={() => props.navigation.navigate("Home")}
+                >
+                    <LinearGradient
+                        // Button Linear Gradient
+                        end={[1.0, 0.5]}
+                        start={[0.0, 0.5]}
+                        locations={[0.0, 1.0]}
+                        colors={['#BD2B31', '#2B439E']}
+                        style={{ alignItems: 'center', borderRadius: 5, borderRadius: 50 }}>
+                        <Text style={styles._button_txt}>I Agree</Text>
+                    </LinearGradient>
                 </TouchableOpacity>
 
 
@@ -125,7 +136,7 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     button: {
-        backgroundColor: "green",
+        // backgroundColor: "green",
         borderRadius: 50,
         width: "100%",
         alignSelf: "center",

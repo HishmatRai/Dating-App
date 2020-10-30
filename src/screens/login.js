@@ -5,6 +5,8 @@ import { TextInput } from 'react-native-paper';
 import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 const Login = (props) => {
@@ -50,6 +52,7 @@ const Login = (props) => {
                             style={styles._input}
                             underlineColor="#545151"
                             secureTextEntry={true}
+                            color="green"
 
                         />
 
@@ -60,8 +63,20 @@ const Login = (props) => {
 
                         {/* <<<<<<<< Login Button >>>>>>>>> */}
                         <TouchableOpacity
-                            style={styles.button}>
-                            <Text style={styles._button_txt}>Login</Text>
+                            style={styles.button}
+                            onPress={() => props.navigation.navigate("Home")}
+                        >
+
+                            <LinearGradient
+                                // Button Linear Gradient
+                                end={[1.0, 0.5]}
+                                start={[0.0, 0.5]}
+                                locations={[0.0, 1.0]}
+                                colors={['#BD2B31', '#2B439E']}
+                                style={{ alignItems: 'center', borderRadius: 5, borderRadius: 50 }}>
+
+                                <Text style={styles._button_txt}>Login</Text>
+                            </LinearGradient>
                         </TouchableOpacity>
 
                         {/* <<<<<<<< Social Button >>>>>>>>> */}
@@ -86,17 +101,19 @@ const Login = (props) => {
                         {/* <<<<<<<< Register >>>>>>>>> */}
                         <View style={styles._register_main}>
                             <Text style={styles._new_user}>New user? </Text>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => props.navigation.navigate("Continue")}
+                            >
                                 <Text style={styles._register}>Register</Text>
                             </TouchableOpacity>
                         </View>
 
 
+                        <Text style={styles._line}></Text>
 
                     </ScrollView>
                 </View>
                 {/* <<<<<<<< Line >>>>>>>>> */}
-                <Text style={styles._line}></Text>
             </ImageBackground>
 
 
@@ -132,7 +149,6 @@ const styles = StyleSheet.create({
     },
     _input: {
         backgroundColor: "transparent",
-
     },
     _forgot_password_button: {
         alignSelf: "flex-end",
@@ -147,7 +163,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1
     },
     button: {
-        backgroundColor: "green",
+        // backgroundColor: "green",
         borderRadius: 50,
         width: "90%",
         alignSelf: "center",
@@ -234,8 +250,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#CCCCCC",
         height: 5,
         borderRadius: 50,
-        position: "absolute",
-        bottom: 10
+        marginTop: 10
     }
 });
 

@@ -9,7 +9,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import MyDatePicker from './../component/datepicker'
 import * as ImagePicker from 'expo-image-picker';
 import * as Location from 'expo-location';
-
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
@@ -117,7 +116,9 @@ const Continue = (props) => {
                     </TouchableOpacity>
                 </View>
                 {/* <<<<<<<< More Button <<<<<<<< */}
-                <TouchableOpacity style={styles._more_button}>
+                <TouchableOpacity style={styles._more_button}
+                    onPress={() => props.navigation.navigate("Moreinterest")}
+                >
                     <Text style={styles._more_button_txt}>Add more interest</Text>
                 </TouchableOpacity>
 
@@ -151,8 +152,18 @@ const Continue = (props) => {
 
 
                 {/* <<<<<<<< Continue button >>>>>>>>> */}
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles._button_txt}>Continue</Text>
+                <TouchableOpacity style={styles.button}
+                    onPress={() => props.navigation.navigate("Agree")}
+                >
+                    <LinearGradient
+                        // Button Linear Gradient
+                        end={[1.0, 0.5]}
+                        start={[0.0, 0.5]}
+                        locations={[0.0, 1.0]}
+                        colors={['#BD2B31', '#2B439E']}
+                        style={{ alignItems: 'center', borderRadius: 5, borderRadius: 50 }}>
+                        <Text style={styles._button_txt}>Continue</Text>
+                    </LinearGradient>
                 </TouchableOpacity>
 
 
@@ -179,7 +190,7 @@ const styles = StyleSheet.create({
 
 
     button: {
-        backgroundColor: "green",
+        // backgroundColor: "green",
         borderRadius: 50,
         width: "100%",
         alignSelf: "center",

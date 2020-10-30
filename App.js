@@ -5,12 +5,13 @@ import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import Navigation from './src/navigation/navigation'
-
+import Getstart from './src/screens/getstart'
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isReady: false,
+      showMe: true
     };
   }
 
@@ -35,6 +36,12 @@ export default class App extends React.Component {
       MontserratSemiBold: require("./src/fontfamily/MontserratSemiBold.ttf"),
 
     });
+    setTimeout(() => {
+      this.setState({
+        showMe: false
+      })
+    },
+      1000)
     this.setState({ isReady: true });
   }
 
@@ -43,6 +50,11 @@ export default class App extends React.Component {
       return <AppLoading />;
     }
 
-    return <Navigation />;
+    return (
+      this.state.showMe ?
+        <Getstart />
+        :
+        <Navigation />
+    )
   }
 }

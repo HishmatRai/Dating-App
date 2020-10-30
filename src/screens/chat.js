@@ -45,7 +45,9 @@ const Chat = (props) => {
         <ScrollView showsVerticalScrollIndicator={false} >
           <View style={styles._chat_main}>
             {/* >>>>>>>>>>>>> 01 <<<<<<<<<<<< */}
-            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}>
+            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
+              onPress={() => props.navigation.navigate("Message")}
+            >
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -57,8 +59,10 @@ const Chat = (props) => {
               </View>
             </TouchableOpacity>
 
-            {/* >>>>>>>>>>>>> 01 <<<<<<<<<<<< */}
-            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}>
+            {/* >>>>>>>>>>>>> 02 <<<<<<<<<<<< */}
+            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
+            onPress={() => props.navigation.navigate("Message")}
+            >
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -71,7 +75,8 @@ const Chat = (props) => {
             </TouchableOpacity>
 
             {/* >>>>>>>>>>>>> 03 <<<<<<<<<<<< */}
-            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}>
+            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
+            onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -84,7 +89,8 @@ const Chat = (props) => {
             </TouchableOpacity>
 
             {/* >>>>>>>>>>>>> 04 <<<<<<<<<<<< */}
-            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}>
+            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
+            onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -97,7 +103,8 @@ const Chat = (props) => {
             </TouchableOpacity>
 
             {/* >>>>>>>>>>>>> 05 <<<<<<<<<<<< */}
-            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}>
+            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
+            onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -110,7 +117,8 @@ const Chat = (props) => {
             </TouchableOpacity>
 
             {/* >>>>>>>>>>>>> 06 <<<<<<<<<<<< */}
-            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}>
+            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
+            onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -123,7 +131,8 @@ const Chat = (props) => {
             </TouchableOpacity>
 
             {/* >>>>>>>>>>>>> 07 <<<<<<<<<<<< */}
-            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}>
+            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
+            onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -137,7 +146,8 @@ const Chat = (props) => {
 
 
             {/* >>>>>>>>>>>>> 08 <<<<<<<<<<<< */}
-            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}>
+            <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
+            onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />

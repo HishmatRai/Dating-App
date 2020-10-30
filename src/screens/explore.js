@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView } from "react-native";
-
+import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView, TouchableOpacity } from "react-native";
+import { Feather } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import AppIntroSlider from "react-native-app-intro-slider";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Slider from './../component/imageslider'
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
@@ -20,14 +24,52 @@ const Explore = (props) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent hidden={true} />
-     <Text>Explore</Text>
-     <Text>Explore</Text>
-     <Text>Explore</Text>
-     <Text>Explore</Text>
-     <Text>Explore</Text>
-     <Text>Explore</Text>
-     <Text>Explore</Text>
+      <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
+      <View style={{ margin: 20 }}>
+        {/* >>>>>>>>>>>>>>>>>>>>> Header <<<<<<<<<<<<<<<<<<<<<<<<<<< */}
+        <View style={styles._header_main}>
+          <TouchableOpacity
+          >
+            <MaterialCommunityIcons name="filter-variant" size={24} color="#ED3030" />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate("Notification")}>
+            <Ionicons name="ios-notifications" size={24} color="#ED3030" />
+          </TouchableOpacity>
+        </View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+
+          {/* images */}
+          <View style={styles._image_main_view}>
+            <View style={styles._image_main}>
+              <Image source={require('./../../assets/explore1.png')} style={styles._profile_images} />
+            </View>
+
+            <View style={styles._image_main}>
+              <Image source={require('./../../assets/explore1.png')} style={styles._profile_images} />
+            </View>
+
+            <View style={styles._image_main}>
+              <Image source={require('./../../assets/explore1.png')} style={styles._profile_images} />
+            </View>
+
+            <View style={styles._image_main}>
+              <Image source={require('./../../assets/explore1.png')} style={styles._profile_images} />
+            </View>
+
+            <View style={styles._image_main}>
+              <Image source={require('./../../assets/explore1.png')} style={styles._profile_images} />
+            </View>
+          </View>
+
+          {/* large image */}
+<Slider />
+          {/* <View style={styles._large_image_main}>
+            <Image source={require('./../../assets/largeimage.png')} style={styles._large_image} />
+          </View> */}
+        </ScrollView>
+      </View>
 
     </View>
   );
@@ -36,15 +78,46 @@ const Explore = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-
+    backgroundColor: "white"
   },
-  _background_img: {
-    width: "100%",
-    height: "100%"
-  }
 
+
+  _header_main: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 20,
+    marginBottom: 10
+  },
+  _image_main_view: {
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  _image_main: {
+    width: 54,
+    height: 60,
+    borderRadius: 10,
+    borderWidth: 0.1,
+    borderColor: "red"
+  },
+  _profile_images: {
+    width: 54,
+    height: 60,
+    borderRadius: 10
+  },
+  _large_image_main: {
+    width: 299,
+    height: 361,
+    marginTop: 20,
+    marginLeft: 15,
+    marginRight: 15,
+    borderRadius: 15
+  },
+  _large_image: {
+    width: 299,
+    height: 361,
+    borderRadius: 15
+
+  }
 });
 
 export default Explore;

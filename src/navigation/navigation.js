@@ -8,7 +8,7 @@ import Getstart from './../screens/getstart'
 import Login from './../screens/login'
 import Agree from './../screens/agree'
 import Setting from './../screens/setting'
-import Editenfo from './../screens/edit_info'
+import Editinfo from './../screens/edit_info'
 import Explore from './../screens/explore'
 import Favourite from './../screens/favourite'
 import Chat from './../screens/chat'
@@ -19,6 +19,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import Continue from './../screens/continue'
 import Moreinterest from './../screens/moreinterst'
+import Message from './../screens/message'
+import Notification from './../screens/notification'
 const Tab = createBottomTabNavigator();
 function BottomNavigation() {
   return (
@@ -60,13 +62,15 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="Home" component={Getstart} options={{ headerShown: false }} /> */}
-        {/* <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} /> */}
-        {/* <Stack.Screen name="Agree" component={Agree} options={{ headerShown: false }} /> */}
-        {/* <Stack.Screen name="Setting" component={Setting} options={{ headerShown: false }} /> */}
-        {/* <Stack.Screen name="Editenfo" component={Editenfo} options={{ headerShown: false }} /> */}
-        {/* <Stack.Screen name="Continue" component={Continue} options={{ headerShown: false }} /> */}
-        {/* <Stack.Screen name="Moreinterest" component={Moreinterest} options={{ headerShown: false }} /> */}
+        {/* <Stack.Screen name="Getstart" component={Getstart} options={{ headerShown: false }} /> */}
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name="Agree" component={Agree} options={{ headerShown: false }} />
+        <Stack.Screen name="Setting" component={Setting} options={{ headerShown: false }} />
+        <Stack.Screen name="Editinfo" component={Editinfo} options={{ headerShown: false }} />
+        <Stack.Screen name="Continue" component={Continue} options={{ headerShown: false }} />
+        <Stack.Screen name="Moreinterest" component={Moreinterest} options={{ headerShown: false }} />
+        <Stack.Screen name="Message" component={Message} options={{ headerShown: false }} />
+        <Stack.Screen name="Notification" component={Notification} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={BottomNavigation} options={{ headerShown: false }} />
 
       </Stack.Navigator>

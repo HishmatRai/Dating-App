@@ -30,7 +30,9 @@ const EditEnfo = (props) => {
             <View style={{ margin: 20 }}>
                 {/* <<<<<<<<<<<<<   Header >>>>>>>>>>>>> */}
                 <View style={styles._header}>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        style={{ paddingLeft: 5, paddingRight: 5 }}
+                        onPress={() => props.navigation.goBack()}>
                         <Ionicons name="ios-arrow-back" size={20} color="#CA2C30" />
                     </TouchableOpacity>
                     <Text style={styles._header_text}>Edit Enfo</Text>

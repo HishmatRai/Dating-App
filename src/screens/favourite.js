@@ -1,132 +1,237 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Octicons } from '@expo/vector-icons';
-const window = Dimensions.get("window");
-const screen = Dimensions.get("screen");
+import { Entypo } from '@expo/vector-icons';
+import RBSheet from "react-native-raw-bottom-sheet";
+import DistanceSlider from './../component/distance_slider'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Intrestingbutton from './../component/interested_radio_button'
+import Togglebuttom from './../component/togglebutton'
+// const window = Dimensions.get("window");
+// const screen = Dimensions.get("screen");
 
-const Favourite = (props) => {
-  const [dimensions, setDimensions] = useState({ window, screen });
+class Favourite extends React.Component {
+  // const [dimensions, setDimensions] = useState({ window, screen });
 
-  const onChange = ({ window, screen }) => {
-    setDimensions({ window, screen });
-  };
+  // const onChange = ({ window, screen }) => {
+  //   setDimensions({ window, screen });
+  // };
+  // const refRBSheet = useRef();
 
-  useEffect(() => {
-    Dimensions.addEventListener("change", onChange);
-    return () => {
-      Dimensions.removeEventListener("change", onChange);
-    };
-  });
+  // useEffect(() => {
+  //   Dimensions.addEventListener("change", onChange);
+  //   return () => {
+  //     Dimensions.removeEventListener("change", onChange);
+  //   };
+  // });
+  render() {
 
-  return (
-    <View style={styles.container}>
-      <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
-      <View style={{ margin: 20 }}>
-        {/* >>>>>>>>>>>>>>>>>>  Header <<<<<<<<<<<<<<<< */}
-        <View style={styles._header_main}>
-          <Text style={styles._heading}>Favourites</Text>
-          <View style={{ flexDirection: "row" }}>
-            <TouchableOpacity>
-              <Feather name="align-center" size={24} color="#ED3030" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Feather name="more-vertical" size={24} color="#ED3030" />
-            </TouchableOpacity>
+
+
+    return (
+      <View style={styles.container}>
+        <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
+        <View style={{ margin: 20 }}>
+          {/* >>>>>>>>>>>>>>>>>>  Header <<<<<<<<<<<<<<<< */}
+          <View style={styles._header_main}>
+            <Text style={styles._heading}>Favourites</Text>
+            <View style={{ flexDirection: "row" }}>
+              <TouchableOpacity
+                onPress={() => this.RBSheet.open()}
+              >
+                <MaterialCommunityIcons name="filter-variant" size={24} color="#ED3030" />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Feather name="more-vertical" size={24} color="#ED3030" />
+              </TouchableOpacity>
+            </View>
           </View>
+
+          {/* >>>>>>>>>>>>>>>>>>  Body <<<<<<<<<<<<<<<< */}
+
+          <ScrollView showsVerticalScrollIndicator={false} >
+            {/* >>>>>>>>>>>> 1 <<<<<<<<<< */}
+            <View style={styles._card_main}>
+
+              {/* card 1 */}
+              <View style={styles._Card_first}>
+                <View style={styles._image_main}>
+                  <Image source={require('./../../assets/favourite1.png')} style={styles._user_image} />
+                </View>
+                <Text style={styles._user_name}>Jenifer Jane</Text>
+                <View style={styles._active_main}>
+                  <Octicons name="primitive-dot" size={15} color="green" />
+                  <Text style={styles._active}>Active Now</Text>
+                </View>
+              </View>
+
+              {/* card 2 */}
+              <View style={styles._Card_first}>
+                <View style={styles._image_main}>
+                  <Image source={require('./../../assets/favourite2.png')} style={styles._user_image} />
+                </View>
+                <Text style={styles._user_name}>Christina</Text>
+                <View style={styles._active_main}>
+                  <Octicons name="primitive-dot" size={15} color="green" />
+                  <Text style={styles._active}>Active Now</Text>
+                </View>
+              </View>
+            </View>
+
+            {/* >>>>>>>>>>>> 1 <<<<<<<<<< */}
+            <View style={styles._card_main}>
+
+              {/* card 2 */}
+              <View style={styles._Card_first}>
+                <View style={styles._image_main}>
+                  <Image source={require('./../../assets/favourite3.png')} style={styles._user_image} />
+                </View>
+                <Text style={styles._user_name}>Haidar</Text>
+                <View style={styles._active_main}>
+                  <Octicons name="primitive-dot" size={15} color="green" />
+                  <Text style={styles._active}>Active Now</Text>
+                </View>
+              </View>
+
+              {/* card 2 */}
+              <View style={styles._Card_first}>
+                <View style={styles._image_main}>
+                  <Image source={require('./../../assets/favourite4.png')} style={styles._user_image} />
+                </View>
+                <Text style={styles._user_name}>Maria</Text>
+                <View style={styles._active_main}>
+                  <Text style={styles._last_seen}>Last seen :</Text>
+                  <Text style={styles._last_seen}>4h ago</Text>
+                </View>
+              </View>
+            </View>
+
+            {/* >>>>>>>>>>>> 1 <<<<<<<<<< */}
+            <View style={styles._card_main}>
+              {/* card 3 */}
+              <View style={styles._Card_first}>
+                <View style={styles._image_main}>
+                  <Image source={require('./../../assets/favourite5.png')} style={styles._user_image} />
+                </View>
+                <Text style={styles._user_name}>Tashy</Text>
+                <View style={styles._active_main}>
+                  <Octicons name="primitive-dot" size={15} color="green" />
+                  <Text style={styles._active}>Active Now</Text>
+                </View>
+              </View>
+
+              {/* card 2 */}
+              <View style={styles._Card_first}>
+                <View style={styles._image_main}>
+                  <Image source={require('./../../assets/favourite6.png')} style={styles._user_image} />
+                </View>
+                <Text style={styles._user_name}>Angelena</Text>
+                <View style={styles._active_main}>
+                  <Octicons name="primitive-dot" size={15} color="green" />
+                  <Text style={styles._active}>Active Now</Text>
+                </View>
+              </View>
+            </View>
+            <View style={{ marginBottom: 100 }}></View>
+          </ScrollView>
         </View>
-
-        {/* >>>>>>>>>>>>>>>>>>  Body <<<<<<<<<<<<<<<< */}
-        <ScrollView showsVerticalScrollIndicator={false} >
-          {/* >>>>>>>>>>>> 1 <<<<<<<<<< */}
-          <View style={styles._card_main}>
-
-            {/* card 1 */}
-            <View style={styles._Card_first}>
-              <View style={styles._image_main}>
-                <Image source={require('./../../assets/favourite1.png')} style={styles._user_image} />
+        <RBSheet
+          ref={(ref) => {
+            this.RBSheet = ref;
+          }}
+          height={600}
+          openDuration={250}
+          customStyles={{
+            container: {
+              // justifyContent: "center",
+              // alignItems: "center",
+              borderTopEndRadius: 20,
+              borderTopLeftRadius: 20,
+            },
+          }}
+        >
+          <ScrollView>
+            {/* bottom sheeet */}
+            <View style={{ marginRight: 30, marginLeft: 30, marginTop: 10 }}>
+              {/* <<<<<<<<<<<<<<<<<<<<<<< Filter >>>>>>>>>>>>>>>>>>>>> */}
+              <View style={styles._bottm_sheet_main}>
+                <TouchableOpacity
+                  onPress={() => alert("dfdfd")}
+                >
+                  <Entypo name="cross" size={24} color="black" />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Text style={styles._filter}>Filter</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Text style={styles._reset}>Reset</Text>
+                </TouchableOpacity>
               </View>
-              <Text style={styles._user_name}>Jenifer Jane</Text>
-              <View style={styles._active_main}>
-                <Octicons name="primitive-dot" size={15} color="green" />
-                <Text style={styles._active}>Active Now</Text>
+
+              {/* <<<<<<<<<<<<<<<<<<<<<<< Location >>>>>>>>>>>>>>>>>>>>> */}
+              <View style={styles._bottm_sheet_main}>
+                <Text style={styles._location}>Location</Text>
+                <TouchableOpacity style={{ flexDirection: "row" }}>
+                  <Text style={styles._reset}>New York</Text>
+                  <Entypo name="chevron-small-right" size={24} color="black" />
+                </TouchableOpacity>
               </View>
+
+              {/* <<<<<<<<<<<<<<<<<<<<<<< Location >>>>>>>>>>>>>>>>>>>>> */}
+              <View style={styles._bottm_sheet_main}>
+                <Text style={styles._location}>Distance</Text>
+                <TouchableOpacity style={{ flexDirection: "row" }}>
+                  <Entypo name="chevron-small-left" size={24} color="black" />
+                  <Text style={styles._reset}>3 mi</Text>
+                </TouchableOpacity>
+              </View>
+              <DistanceSlider />
+
+              {/* <<<<<<<<<<<<<<<<<<<<<<< Interested in >>>>>>>>>>>>>>>>>>>>> */}
+              <View style={styles._bottm_sheet_main2}>
+                <View style={styles._bottm_sheet_main3}>
+                  <Text style={styles._location}>Interested in</Text>
+                  <TouchableOpacity style={{ flexDirection: "row" }}>
+                    <Text style={styles._reset}>Female</Text>
+                    <Entypo name="chevron-small-right" size={24} color="black" />
+                  </TouchableOpacity>
+                </View>
+                <Intrestingbutton />
+              </View>
+
+              {/* <<<<<<<<<<<<<<<<<<<<<<< Age >>>>>>>>>>>>>>>>>>>>> */}
+              <View style={styles._bottm_sheet_main}>
+                <Text style={styles._location}>Age</Text>
+                <TouchableOpacity style={{ flexDirection: "row" }}>
+                  <Text style={styles._reset}>20 - 25</Text>
+                </TouchableOpacity>
+              </View>
+
+              {/* <<<<<<<<<<<<<<<<<<<<<<< Height >>>>>>>>>>>>>>>>>>>>> */}
+              <View style={styles._bottm_sheet_main}>
+                <Text style={styles._location}>Height</Text>
+              </View>
+
+              {/* <<<<<<<<<<<<<<<<<<<<<<< Match Sound >>>>>>>>>>>>>>>>>>>>> */}
+              <View style={styles._bottm_sheet_main}>
+                <Text style={styles._location}>Match Sound</Text>
+                <View style={{marginRight:-5}}>
+                  <Togglebuttom />
+                </View>
+              </View>
+
+
+              <TouchableOpacity style={styles._done_button}>
+                <Text style={styles._done_button_text}>Done</Text>
+              </TouchableOpacity>
             </View>
-
-            {/* card 2 */}
-            <View style={styles._Card_first}>
-              <View style={styles._image_main}>
-                <Image source={require('./../../assets/favourite2.png')} style={styles._user_image} />
-              </View>
-              <Text style={styles._user_name}>Christina</Text>
-              <View style={styles._active_main}>
-                <Octicons name="primitive-dot" size={15} color="green" />
-                <Text style={styles._active}>Active Now</Text>
-              </View>
-            </View>
-          </View>
-
-          {/* >>>>>>>>>>>> 1 <<<<<<<<<< */}
-          <View style={styles._card_main}>
-
-            {/* card 2 */}
-            <View style={styles._Card_first}>
-              <View style={styles._image_main}>
-                <Image source={require('./../../assets/favourite3.png')} style={styles._user_image} />
-              </View>
-              <Text style={styles._user_name}>Haidar</Text>
-              <View style={styles._active_main}>
-                <Octicons name="primitive-dot" size={15} color="green" />
-                <Text style={styles._active}>Active Now</Text>
-              </View>
-            </View>
-
-            {/* card 2 */}
-            <View style={styles._Card_first}>
-              <View style={styles._image_main}>
-                <Image source={require('./../../assets/favourite4.png')} style={styles._user_image} />
-              </View>
-              <Text style={styles._user_name}>Maria</Text>
-              <View style={styles._active_main}>
-                <Text style={styles._last_seen}>Last seen :</Text>
-                <Text style={styles._last_seen}>4h ago</Text>
-              </View>
-            </View>
-          </View>
-
-          {/* >>>>>>>>>>>> 1 <<<<<<<<<< */}
-          <View style={styles._card_main}>
-
-            {/* card 3 */}
-            <View style={styles._Card_first}>
-              <View style={styles._image_main}>
-                <Image source={require('./../../assets/favourite5.png')} style={styles._user_image} />
-              </View>
-              <Text style={styles._user_name}>Tashy</Text>
-              <View style={styles._active_main}>
-                <Octicons name="primitive-dot" size={15} color="green" />
-                <Text style={styles._active}>Active Now</Text>
-              </View>
-            </View>
-
-            {/* card 2 */}
-            <View style={styles._Card_first}>
-              <View style={styles._image_main}>
-                <Image source={require('./../../assets/favourite6.png')} style={styles._user_image} />
-              </View>
-              <Text style={styles._user_name}>Angelena</Text>
-              <View style={styles._active_main}>
-                <Octicons name="primitive-dot" size={15} color="green" />
-                <Text style={styles._active}>Active Now</Text>
-              </View>
-            </View>
-          </View>
-          <View style={{ marginBottom: 100 }}></View>
-        </ScrollView>
+          </ScrollView>
+        </RBSheet>
       </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -184,9 +289,59 @@ const styles = StyleSheet.create({
     color: "#757E90",
     paddingLeft: 10
   },
-  _last_seen:{
+  _last_seen: {
     color: "#757E90",
     paddingLeft: 3
+  },
+  _bottm_sheet_main: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderBottomColor: "gray",
+    borderBottomWidth: 1,
+    paddingBottom: 20,
+    marginTop: 20
+  },
+  _bottm_sheet_main3: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingBottom: 10
+  },
+  _bottm_sheet_main2: {
+    borderBottomColor: "gray",
+    borderBottomWidth: 1,
+    paddingBottom: 20,
+    marginTop: 20
+  },
+  _filter: {
+    fontWeight: "bold",
+    fontSize: 22
+  },
+  _location: {
+    fontWeight: "bold",
+    fontSize: 17,
+    color: "#CA2C30"
+  },
+  _reset: {
+    fontSize: 15
+  },
+  _done_button: {
+    backgroundColor: "#CA2C30",
+    borderRadius: 10,
+    width: "50%",
+    alignSelf: "center",
+    marginTop: 20
+  },
+  _done_button_text: {
+    fontWeight: "bold",
+    fontSize: 22,
+    textAlign: "center",
+    paddingBottom: 7,
+    paddingRight: 5,
+    paddingLeft: 5,
+    paddingTop: 7,
+    color: "white"
   }
 
 });

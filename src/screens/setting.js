@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView, TouchableOpacity } from "react-native";
+import {
+    View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView,
+    TouchableOpacity, Modal, TouchableHighlight, Alert
+} from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
@@ -10,6 +13,9 @@ const screen = Dimensions.get("screen");
 
 const Setting = (props) => {
     const [dimensions, setDimensions] = useState({ window, screen });
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible2, setModalVisible2] = useState(false);
+    const [modalVisible3, setModalVisible3] = useState(false);
 
     const onChange = ({ window, screen }) => {
         setDimensions({ window, screen });
@@ -28,7 +34,10 @@ const Setting = (props) => {
             <View style={{ margin: 20 }}>
                 {/* <<<<<<<<<<<<<   Header >>>>>>>>>>>>> */}
                 <View style={styles._header}>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                    style={{paddingLeft:5,paddingRight:5}}
+                     onPress={() => props.navigation.goBack()}
+                    >
                         <Ionicons name="ios-arrow-back" size={20} color="#CA2C30" />
                     </TouchableOpacity>
                     <Text style={styles._header_text}>Settings</Text>
@@ -36,25 +45,250 @@ const Setting = (props) => {
 
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {/* <<<<<<<<<<<<<   Card 1 >>>>>>>>>>>>> */}
-                    <TouchableOpacity style={styles._card1}>
+                    <TouchableOpacity style={styles._card1}
+                        onPress={() => {
+                            setModalVisible(true);
+                        }}>
                         <View style={{ flexDirection: "row" }}>
                             <Image source={require('./../../assets/logo.png')} style={styles._logo} />
                             <Text style={styles._premium}>Premium</Text>
                         </View>
                         <Text style={styles._premium_des}>Unlock  our most exclusicve features</Text>
                     </TouchableOpacity>
+                    {/* <<<<<<<<<<<<<  model  >>>>>>>>>>>>> */}
+
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={modalVisible}
+                        onRequestClose={() => {
+                            Alert.alert("Modal has been closed.");
+                        }}
+
+                    >
+                        <View style={styles.centeredView}>
+                            <View style={styles.modalView}>
+                                <TouchableOpacity
+                                    style={{ ...styles.openButton, justifyContent: "flex-end", marginTop: -20, marginLeft: "90%" }}
+                                    onPress={() => {
+                                        setModalVisible(!modalVisible);
+                                    }}
+                                >
+                                    <EvilIcons name="close" size={24} color="black" />
+                                </TouchableOpacity>
+                                <Image source={require('./../../assets/premium.png')} style={styles._premium_logo} />
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_heading}>Features</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_heading}>Premium</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Swipe Right (24 hrs)</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>Unlimited</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Shown on top bar</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>Yes</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>See who favourite you</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>Yes</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>See who swiped right on you</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>Yes and swipe back</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Quick text without match</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>5 free, then $4.95 (per chat)</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Boost profile (last 2 hrs)</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>5 free, then $4.95 (each)</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Super like</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>5 free, then $4.95 (each)</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Ads in app</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>No ads</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Cost</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>$19.95 (per month)</Text>
+                                    </View>
+                                </View>
+                                <TouchableOpacity style={styles._continue_button}>
+                                    <Text style={styles._continue_button_text}>Continue</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </Modal>
+
 
                     {/* <<<<<<<<<<<<<   Card 2 >>>>>>>>>>>>> */}
-                    <TouchableOpacity style={styles._card1}>
+                    <TouchableOpacity style={styles._card1}
+                        onPress={() => {
+                            setModalVisible2(true);
+                        }}>
                         <View style={{ flexDirection: "row" }}>
                             <Image source={require('./../../assets/logo.png')} style={styles._logo} />
                             <AntDesign name="plus" size={24} color="#30439B" />
                         </View>
                         <Text style={styles._premium_des}>Unlimited likes & more</Text>
                     </TouchableOpacity>
+                    {/* <<<<<<<<<<<<<  model  >>>>>>>>>>>>> */}
 
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={modalVisible2}
+                        onRequestClose={() => {
+                            Alert.alert("Modal has been closed.");
+                        }}
+
+                    >
+                        <View style={styles.centeredView}>
+                            <View style={styles.modalView}>
+                                <TouchableOpacity
+                                    style={{ ...styles.openButton, justifyContent: "flex-end", marginTop: -20, marginLeft: "90%" }}
+                                    onPress={() => {
+                                        setModalVisible2(!modalVisible2);
+                                    }}
+                                >
+                                    <EvilIcons name="close" size={24} color="black" />
+                                </TouchableOpacity>
+                                <Image source={require('./../../assets/plus.png')} style={styles._premium_logo} />
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_heading}>Features</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_heading2}>Plus</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Swipe Right (24 hrs)</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>40</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Shown on top bar</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>No</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>See who favourite you</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>No</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>See who swiped right on you</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>Yes and swipe back</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Quick text without match</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>5 free, then $4.95 (per chat)</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Boost profile (last 2 hrs)</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>5 free, then $4.95 (each)</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Super like</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>5 free, then $4.95 (each)</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Ads in app</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>No ads</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Cost</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>$19.95 (per month)</Text>
+                                    </View>
+                                </View>
+                                <TouchableOpacity style={styles._continue_button}>
+                                    <Text style={styles._continue_button_text}>Continue</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </Modal>
                     {/* <<<<<<<<<<<<<   Card 3 >>>>>>>>>>>>> */}
-                    <TouchableOpacity style={styles._card1}>
+                    <TouchableOpacity style={styles._card1}
+                        onPress={() => {
+                            setModalVisible3(true);
+                        }}>
                         <View style={{ flexDirection: "row" }}>
                             <Image source={require('./../../assets/logo.png')} style={styles._logo} />
                             <Text style={styles._standard}>STANDARD</Text>
@@ -62,6 +296,114 @@ const Setting = (props) => {
                         <Text style={styles._premium_des}>Watch add to earn 20 credits</Text>
                     </TouchableOpacity>
 
+                    {/* <<<<<<<<<<<<<  model  >>>>>>>>>>>>> */}
+
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={modalVisible3}
+                        onRequestClose={() => {
+                            Alert.alert("Modal has been closed.");
+                        }}
+
+                    >
+                        <View style={styles.centeredView}>
+                            <View style={styles.modalView}>
+                                <TouchableOpacity
+                                    style={{ ...styles.openButton, justifyContent: "flex-end", marginTop: -20, marginLeft: "90%" }}
+                                    onPress={() => {
+                                        setModalVisible3(!modalVisible3);
+                                    }}
+                                >
+                                    <EvilIcons name="close" size={24} color="black" />
+                                </TouchableOpacity>
+                                <Image source={require('./../../assets/standard.png')} style={styles._premium_logo} />
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_heading}>Features</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_heading2}>Standard</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Swipe Right (24 hrs)</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>20</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Shown on top bar</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>No</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>See who favourite you</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>No</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>See who swiped right on you</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>No</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Quick text without match</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}> $4.95 (per chat)</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Boost profile (last 2 hrs)</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}> $4.95 (each)</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Super like</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>$4.95 (each)</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Ads in app</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>Yes</Text>
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={styles._features}>
+                                        <Text style={styles._features_text}>Cost</Text>
+                                    </View>
+                                    <View style={styles._premium_view}>
+                                        <Text style={styles._premium_text}>Free</Text>
+                                    </View>
+                                </View>
+                                <TouchableOpacity style={styles._continue_button2}>
+                                    <Text style={styles._continue_button_text}>Continue</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </Modal>
                     {/* <<<<<<<<<<<< Account Setting >>>>>>>>>>>> */}
                     <View style={{ marginTop: 50 }}>
                         <Text style={styles._heading}>Account Settings</Text>
@@ -454,6 +796,101 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontFamily: "MontserratSemiBold"
     },
+    // model
+    centeredView: {
+        flex: 1,
+        // marginTop: 22,
+        backgroundColor: 'rgba(0,0,6,0.7)',
+
+    },
+    modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 25,
+        // alignItems: "center",
+        shadowColor: "#000",
+        // alignSelf:"center",
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 2
+        // },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 8
+    },
+    _premium_logo: {
+        justifyContent: "center",
+        alignSelf: "center",
+        alignItems: "center",
+        width: 242,
+        height: 47,
+        marginBottom: 30,
+        marginLeft: -30
+    },
+    _features: {
+        width: "50%"
+
+    },
+    _premium_view: {
+        width: "50%"
+    },
+    _premium_heading: {
+        fontSize: 18,
+        color: "#EFBF00",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    _premium_heading2: {
+        fontSize: 18,
+        color: "#30439B",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    _features_heading: {
+        fontSize: 18,
+        color: "#CA2C30",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    _features_text: {
+        // textAlign: "center",
+        marginTop: 10,
+        // fontWeight: "bold",
+        fontSize: 15
+
+
+    },
+    _premium_text: {
+        color: "#CA2C30",
+        textAlign: "center",
+        marginTop: 10,
+        fontSize: 15
+
+
+    },
+    _continue_button: {
+        backgroundColor: "#30439B",
+        width: "70%",
+        alignSelf: "center",
+        borderRadius: 20,
+        marginTop: 40
+    },
+    _continue_button2: {
+        backgroundColor: "#8B8B8B",
+        width: "70%",
+        alignSelf: "center",
+        borderRadius: 20,
+        marginTop: 40
+    },
+    _continue_button_text: {
+        color: "white",
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: 22,
+        paddingTop: 5,
+        paddingBottom: 10
+    }
 });
 
 export default Setting;

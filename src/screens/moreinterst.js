@@ -191,10 +191,7 @@ const Moreinterest = (props) => {
                     </TouchableOpacity>
                 </View>
 
-                {/* <<<<<<<< More Button <<<<<<<< */}
-                <TouchableOpacity style={styles._more_button}>
-                    <Text style={styles._more_button_txt}>Add more interest</Text>
-                </TouchableOpacity>
+
 
 
                 {/* <<<<<<<< Add Photos <<<<<<<< */}
@@ -226,8 +223,19 @@ const Moreinterest = (props) => {
 
 
                 {/* <<<<<<<< Continue button >>>>>>>>> */}
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles._button_txt}>Continue</Text>
+                <TouchableOpacity style={styles.button}
+                    onPress={() => props.navigation.navigate("Agree")}
+                >
+                    <LinearGradient
+                        // Button Linear Gradient
+                        end={[1.0, 0.5]}
+                        start={[0.0, 0.5]}
+                        locations={[0.0, 1.0]}
+                        colors={['#BD2B31', '#2B439E']}
+                        style={{ alignItems: 'center', borderRadius: 5, borderRadius: 50 }}>
+                        <Text style={styles._button_txt}>Continue</Text>
+                    </LinearGradient>
+
                 </TouchableOpacity>
 
 
@@ -254,7 +262,7 @@ const styles = StyleSheet.create({
 
 
     button: {
-        backgroundColor: "green",
+        // backgroundColor: "green",
         borderRadius: 50,
         width: "100%",
         alignSelf: "center",
