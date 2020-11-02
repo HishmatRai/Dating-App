@@ -6,6 +6,8 @@ import { Octicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import RBSheet from "react-native-raw-bottom-sheet";
 import DistanceSlider from './../component/distance_slider'
+import AgeSlider from './../component/age_slider'
+import HeightSlider from './../component/height_slider'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Intrestingbutton from './../component/interested_radio_button'
 import Togglebuttom from './../component/togglebutton'
@@ -180,15 +182,16 @@ class Favourite extends React.Component {
               </View>
 
               {/* <<<<<<<<<<<<<<<<<<<<<<< Location >>>>>>>>>>>>>>>>>>>>> */}
-              <View style={styles._bottm_sheet_main}>
-                <Text style={styles._location}>Distance</Text>
-                <TouchableOpacity style={{ flexDirection: "row" }}>
-                  <Entypo name="chevron-small-left" size={24} color="black" />
-                  <Text style={styles._reset}>3 mi</Text>
-                </TouchableOpacity>
+              <View style={styles._bottm_sheet_main2}>
+                <View style={styles._bottm_sheet_main3}>
+                  <Text style={styles._location}>Distance</Text>
+                  <TouchableOpacity style={{ flexDirection: "row" }}>
+                    <Entypo name="chevron-small-left" size={24} color="black" />
+                    <Text style={styles._reset}>3 mi</Text>
+                  </TouchableOpacity>
+                </View>
+                <DistanceSlider />
               </View>
-              <DistanceSlider />
-
               {/* <<<<<<<<<<<<<<<<<<<<<<< Interested in >>>>>>>>>>>>>>>>>>>>> */}
               <View style={styles._bottm_sheet_main2}>
                 <View style={styles._bottm_sheet_main3}>
@@ -202,22 +205,28 @@ class Favourite extends React.Component {
               </View>
 
               {/* <<<<<<<<<<<<<<<<<<<<<<< Age >>>>>>>>>>>>>>>>>>>>> */}
-              <View style={styles._bottm_sheet_main}>
-                <Text style={styles._location}>Age</Text>
-                <TouchableOpacity style={{ flexDirection: "row" }}>
-                  <Text style={styles._reset}>20 - 25</Text>
-                </TouchableOpacity>
+              <View style={styles._bottm_sheet_main2}>
+                <View style={styles._bottm_sheet_main3}>
+                  <Text style={styles._location}>Age</Text>
+                  <TouchableOpacity style={{ flexDirection: "row" }}>
+                    <Text style={styles._reset}>20 - 25</Text>
+                  </TouchableOpacity>
+                </View>
+                <AgeSlider />
               </View>
 
               {/* <<<<<<<<<<<<<<<<<<<<<<< Height >>>>>>>>>>>>>>>>>>>>> */}
-              <View style={styles._bottm_sheet_main}>
-                <Text style={styles._location}>Height</Text>
+              <View style={styles._bottm_sheet_main2}>
+                <View style={styles._bottm_sheet_main3}>
+                  <Text style={styles._location}>Height</Text>
+                </View>
+                <AgeSlider />
               </View>
 
               {/* <<<<<<<<<<<<<<<<<<<<<<< Match Sound >>>>>>>>>>>>>>>>>>>>> */}
               <View style={styles._bottm_sheet_main}>
                 <Text style={styles._location}>Match Sound</Text>
-                <View style={{marginRight:-5}}>
+                <View style={{ marginRight: -5 }}>
                   <Togglebuttom />
                 </View>
               </View>
@@ -227,6 +236,7 @@ class Favourite extends React.Component {
                 <Text style={styles._done_button_text}>Done</Text>
               </TouchableOpacity>
             </View>
+            <View style={{ marginBottom: 40 }}></View>
           </ScrollView>
         </RBSheet>
       </View>

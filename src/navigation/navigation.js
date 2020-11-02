@@ -4,7 +4,6 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Getstart from './../screens/getstart'
 import Login from './../screens/login'
 import Agree from './../screens/agree'
 import Setting from './../screens/setting'
@@ -62,7 +61,6 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="Getstart" component={Getstart} options={{ headerShown: false }} /> */}
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Agree" component={Agree} options={{ headerShown: false }} />
         <Stack.Screen name="Setting" component={Setting} options={{ headerShown: false }} />

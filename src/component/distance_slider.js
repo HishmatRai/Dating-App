@@ -11,7 +11,7 @@ export default class DistanceSlider extends React.Component {
   constructor() {
     super();
     this.state = {
-      value: 500,
+      value: 200,
     }
   }
   enableScroll = () => this.setState({ scrollEnabled: true });
@@ -20,8 +20,8 @@ export default class DistanceSlider extends React.Component {
     return (
       <View style={styles.container}>
         <Slider
-          minimumValue={500}
-          maximumValue={2000}
+          minimumValue={10}
+          maximumValue={500}
           step={1}
           thumbStyle={styles.thumbStyle}
           trackStyle={styles.trackStyle}
@@ -31,34 +31,10 @@ export default class DistanceSlider extends React.Component {
           thumbImage={<Ionicons name="ios-menu" size={24} color="black" />}
           value={this.state.value}
           onValueChange={(value) => this.setState({ value })} />
-        <Text>{this.state.value}</Text>
-        {/* <RangeSlider
-          style={{ width: 160, height: 80 }}
-          gravity={'center'}
-          min={200}
-          max={1000}
-          step={20}
-          selectionColor="#3df"
-          blankColor="#f618"
-          onValueChanged={(low, high, fromUser) => {
-            this.setState({ rangeLow: low, rangeHigh: high })
-          }}
-           /> */}
-        {/* <ScrollView scrollEnabled={this.state.scrollEnabled}> */}
-        <MultiSlider
-    isMarkersSeparated={true}
-
-    customMarkerLeft={(e) => {
-         return (<CustomMarkerLeft
-          currentValue={e.currentValue}/>)
-    }}
-
-    customMarkerRight={(e) => {
-         return (<CustomMarkerRight
-         currentValue={e.currentValue}/>)
-    }}
-    />
-    {/* </ScrollView> */}
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles._value}>{this.state.value} m</Text>
+          <Text style={styles._value}>{this.state.value} mi</Text>
+        </View>
       </View>
     )
   }
@@ -79,5 +55,8 @@ const styles = StyleSheet.create({
   },
   trackStyle: {
     backgroundColor: "#707070"
+  },
+  _value: {
+    color: "gray"
   }
 });

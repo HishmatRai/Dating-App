@@ -35,8 +35,8 @@ const Setting = (props) => {
                 {/* <<<<<<<<<<<<<   Header >>>>>>>>>>>>> */}
                 <View style={styles._header}>
                     <TouchableOpacity
-                    style={{paddingLeft:5,paddingRight:5}}
-                     onPress={() => props.navigation.goBack()}
+                        style={{ paddingLeft: 5, paddingRight: 5 }}
+                        onPress={() => props.navigation.goBack()}
                     >
                         <Ionicons name="ios-arrow-back" size={20} color="#CA2C30" />
                     </TouchableOpacity>
@@ -157,7 +157,9 @@ const Setting = (props) => {
                                         <Text style={styles._premium_text}>$19.95 (per month)</Text>
                                     </View>
                                 </View>
-                                <TouchableOpacity style={styles._continue_button}>
+                                <TouchableOpacity style={styles._continue_button}
+                                // onPress={() => props.navigation.navigate("Setting")}
+                                >
                                     <Text style={styles._continue_button_text}>Continue</Text>
                                 </TouchableOpacity>
                             </View>
@@ -610,7 +612,8 @@ const Setting = (props) => {
 
                     {/* <<<<<<<< Login Button >>>>>>>>> */}
                     <TouchableOpacity
-                        style={styles.button}>
+                        style={styles.button}
+                        onPress={() => props.navigation.navigate("Login")}>
                         <Text style={styles._button_txt}>Logout</Text>
                     </TouchableOpacity>
 
