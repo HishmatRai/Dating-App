@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView, TouchableOpacity, TextInput } from "react-native";
-import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import RadioButton from './../component/radiobutton'
 import { Ionicons } from '@expo/vector-icons';
-import { linear } from "react-native/Libraries/Animated/src/Easing";
 import { LinearGradient } from 'expo-linear-gradient';
 import MyDatePicker from './../component/datepicker'
 import * as ImagePicker from 'expo-image-picker';

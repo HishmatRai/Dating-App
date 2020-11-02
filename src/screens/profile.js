@@ -6,7 +6,6 @@ import { FontAwesome } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import { Feather } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { EvilIcons } from '@expo/vector-icons';
 import Tabs from './../component/tabs'
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
@@ -84,7 +83,7 @@ const Profile = (props) => {
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles._setting_main}
-                        onPress={() => props.navigation.navigate("Editinfo")}>
+                            onPress={() => props.navigation.navigate("Editinfo")}>
                             <FontAwesome name="edit" size={34} color="#30439B" />
                             <Text style={styles._icons_heading}>Edit Enfo</Text>
                         </TouchableOpacity>

@@ -30,12 +30,12 @@ const Notification = (props) => {
                         <Image source={require('./../../assets/groupphoto.png')} style={styles._group_photo} />
                         <Text style={styles._conversation}>Start conversation now to each other!</Text>
                         <TouchableOpacity style={styles._send_message_button}
-                        onPress={() => props.navigation.navigate("Message")}>
+                            onPress={() => props.navigation.navigate("Message")}>
                             <Text style={styles._send_message_button_text}>Send Message</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles._keep_looking_button}
-                        onPress={() => props.navigation.navigate("FAVOURITE")}
+                            onPress={() => props.navigation.navigate("FAVOURITE")}
                         >
                             <Text style={styles._send_message_button_text}>Keep Looking</Text>
                         </TouchableOpacity>

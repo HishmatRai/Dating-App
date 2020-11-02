@@ -6,7 +6,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { FontAwesome5 } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 

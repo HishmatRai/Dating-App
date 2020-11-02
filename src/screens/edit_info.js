@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Text, Dimensions, TextInput, StatusBar, ScrollView, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
-import { EvilIcons } from '@expo/vector-icons';
-import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 import ToggleButton from './../component/togglebutton'
 import AboutInput from './../component/about_input'
 import RedioButton from './../component/radiobutton'

@@ -1,11 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Slider from 'react-native-slider';
-import MultiSlider from '@ptomasroos/react-native-multi-slider';
-import CustomMarkerLeft from './customMarkerLeft';
-import CustomMarkerRight from './customMarkerRight'
 import { Ionicons } from '@expo/vector-icons';
-import RangeSlider from 'rn-range-slider';
+
 
 export default class DistanceSlider extends React.Component {
   constructor() {

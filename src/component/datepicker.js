@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import { View, StyleSheet, TextInput } from 'react-native';
+import React, { Component } from 'react';
+import { View, StyleSheet } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 import moment from 'moment';
 

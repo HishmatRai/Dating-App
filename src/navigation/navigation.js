@@ -13,7 +13,6 @@ import Favourite from './../screens/favourite'
 import Chat from './../screens/chat'
 import Profile from './../screens/profile'
 import { MaterialIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import Continue from './../screens/continue'

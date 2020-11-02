@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView } from "react-native";
+import { View, StyleSheet, Text, Image, StatusBar, ScrollView } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Octicons } from '@expo/vector-icons';
@@ -7,27 +7,13 @@ import { Entypo } from '@expo/vector-icons';
 import RBSheet from "react-native-raw-bottom-sheet";
 import DistanceSlider from './../component/distance_slider'
 import AgeSlider from './../component/age_slider'
-import HeightSlider from './../component/height_slider'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Intrestingbutton from './../component/interested_radio_button'
 import Togglebuttom from './../component/togglebutton'
-// const window = Dimensions.get("window");
-// const screen = Dimensions.get("screen");
+
 
 class Favourite extends React.Component {
-  // const [dimensions, setDimensions] = useState({ window, screen });
 
-  // const onChange = ({ window, screen }) => {
-  //   setDimensions({ window, screen });
-  // };
-  // const refRBSheet = useRef();
-
-  // useEffect(() => {
-  //   Dimensions.addEventListener("change", onChange);
-  //   return () => {
-  //     Dimensions.removeEventListener("change", onChange);
-  //   };
-  // });
   render() {
 
 

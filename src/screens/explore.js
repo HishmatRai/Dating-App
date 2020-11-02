@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView, TouchableOpacity } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import { View, StyleSheet, Dimensions, Image, StatusBar, ScrollView, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import AppIntroSlider from "react-native-app-intro-slider";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Slider from './../component/imageslider'
 const window = Dimensions.get("window");
@@ -64,10 +62,8 @@ const Explore = (props) => {
           </View>
 
           {/* large image */}
-<Slider />
-          {/* <View style={styles._large_image_main}>
-            <Image source={require('./../../assets/largeimage.png')} style={styles._large_image} />
-          </View> */}
+          <Slider />
+
         </ScrollView>
       </View>
 

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AwesomeProject",
-    "slug": "AwesomeProject",
+    "name": "Dating",
+    "slug": "Dating",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,6 +21,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "ios": {
+      "bundleIdentifier": "com.Dating.Dating",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.Dating.Dating",
+      "versionCode": 1
     }
   }
 }

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import {
     View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView,
-    TouchableOpacity, Modal, TouchableHighlight, Alert
+    TouchableOpacity, Modal, Alert
 } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
-import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 import ToggleButton from './../component/togglebutton'
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");

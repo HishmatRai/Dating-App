@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import {  Text, View, TextInput } from 'react-native';
 export default class CharacterCounter extends React.Component {
     constructor(props) {
         super(props);

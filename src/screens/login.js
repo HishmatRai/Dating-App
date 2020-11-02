@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Text, Dimensions, ImageBackground, TouchableOpacity, ScrollView, Image } from "react-native";
-import Textinput from './../component/textinput'
 import { TextInput } from 'react-native-paper';
 import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
