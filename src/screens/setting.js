@@ -436,7 +436,7 @@ const Setting = (props) => {
                         </View>
                     </View>
 
-                    <Text style={styles._global_dis}>Global change will allow you to see perople nearby and from aroud the world</Text>
+                    <Text style={styles._global_dis}>Global change will allow you to see people nearby and from around the world</Text>
 
                     {/* <<<<<<<<<<<< Date Right >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
@@ -526,7 +526,7 @@ const Setting = (props) => {
 
                     {/* <<<<<<<<<<<< Nitification >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
-                        <Text style={styles._heading}>Nitification</Text>
+                        <Text style={styles._heading}>Notification</Text>
                         <View style={styles._notification_main}>
                             <View style={styles._mob_number_setting_main3}>
                                 <Text style={styles._mob_number_heading}>Email</Text>
@@ -604,7 +604,7 @@ const Setting = (props) => {
                             <Text style={styles._heading}>Privacy Policy</Text>
                         </TouchableOpacity>
                         <TouchableOpacity >
-                            <Text style={styles._heading}>Terms of Serviecs</Text>
+                            <Text style={styles._heading}>Terms of Services</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -762,7 +762,8 @@ const styles = StyleSheet.create({
         elevation: 8,
         backgroundColor: "white",
         padding: 3,
-        alignItems: "center"
+        alignItems: "center",
+        margin: 1
     },
     button: {
         backgroundColor: "#CA2C30",

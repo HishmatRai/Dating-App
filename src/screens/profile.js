@@ -85,7 +85,7 @@ const Profile = (props) => {
                         <TouchableOpacity style={styles._setting_main}
                             onPress={() => props.navigation.navigate("Editinfo")}>
                             <FontAwesome name="edit" size={34} color="#30439B" />
-                            <Text style={styles._icons_heading}>Edit Enfo</Text>
+                            <Text style={styles._icons_heading}>Edit Info</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -120,12 +120,12 @@ const Profile = (props) => {
                             <Text style={styles._subscription}>Likes</Text>
                         </View>
 
-                        <View style={styles._sub_main}>
+                        {/* <View style={styles._sub_main}>
                             <Ionicons name="ios-information-circle-outline" size={24} color="gray" />
                             <TouchableOpacity>
                                 <Text style={styles._more_information_button_text}>More Information</Text>
                             </TouchableOpacity>
-                        </View>
+                        </View> */}
                     </View>
                 </View>
 
@@ -136,7 +136,8 @@ const Profile = (props) => {
                 <View style={{ margin: 20 }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20 }}>
                         <Text style={styles._last_matches}>Last Matches</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => props.navigation.navigate("lastMatches")}>
                             <Text style={styles._more_information_button_text}>View All</Text>
                         </TouchableOpacity>
                     </View>

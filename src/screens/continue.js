@@ -66,7 +66,7 @@ const Continue = (props) => {
                 <View style={styles._name_main}>
                     <TextInput
                         style={styles._mob_number_setting_main}
-                        placeholder="My Fitst Name"
+                        placeholder="My First Name"
                         style={styles._name_input}
                         placeholderTextColor="#2545A3"
                     />

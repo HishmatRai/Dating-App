@@ -19,6 +19,10 @@ import Continue from './../screens/continue'
 import Moreinterest from './../screens/moreinterst'
 import Message from './../screens/message'
 import Notification from './../screens/notification'
+import Vodeocall from './../screens/videocall'
+import AudioCall from './../screens/audiocall'
+import lastMatches from './../screens/last_matches'
+import Camera from './../screens/camera'
 const Tab = createBottomTabNavigator();
 function BottomNavigation() {
   return (
@@ -68,6 +72,10 @@ function Navigation() {
         <Stack.Screen name="Moreinterest" component={Moreinterest} options={{ headerShown: false }} />
         <Stack.Screen name="Message" component={Message} options={{ headerShown: false }} />
         <Stack.Screen name="Notification" component={Notification} options={{ headerShown: false }} />
+        <Stack.Screen name="Vodeocall" component={Vodeocall} options={{ headerShown: false }} />
+        <Stack.Screen name="AudioCall" component={AudioCall} options={{ headerShown: false }} />
+        <Stack.Screen name="Camera" component={Camera} options={{ headerShown: false }} />
+        <Stack.Screen name="lastMatches" component={lastMatches} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={BottomNavigation} options={{ headerShown: false }} />
 
       </Stack.Navigator>

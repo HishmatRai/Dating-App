@@ -27,13 +27,13 @@ const Chat = (props) => {
         <View style={styles._header_main}>
           <Text style={styles._heading}>Chats</Text>
           <View style={styles._serach_main}>
-            <TextInput
+            {/* <TextInput
               style={styles._serach}
               placeholder="Search"
-            />
-            <TouchableOpacity style={{ marginRight: 10 }}>
+            /> */}
+            {/* <TouchableOpacity style={{ marginRight: 10 }}>
               <FontAwesome5 name="search" size={15} color="#CA2C30" />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
           <TouchableOpacity>
             <Feather name="more-vertical" size={24} color="#363636" />
@@ -61,7 +61,7 @@ const Chat = (props) => {
 
             {/* >>>>>>>>>>>>> 02 <<<<<<<<<<<< */}
             <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
-            onPress={() => props.navigation.navigate("Message")}
+              onPress={() => props.navigation.navigate("Message")}
             >
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
@@ -76,7 +76,7 @@ const Chat = (props) => {
 
             {/* >>>>>>>>>>>>> 03 <<<<<<<<<<<< */}
             <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
-            onPress={() => props.navigation.navigate("Message")}>
+              onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -90,7 +90,7 @@ const Chat = (props) => {
 
             {/* >>>>>>>>>>>>> 04 <<<<<<<<<<<< */}
             <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
-            onPress={() => props.navigation.navigate("Message")}>
+              onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -104,7 +104,7 @@ const Chat = (props) => {
 
             {/* >>>>>>>>>>>>> 05 <<<<<<<<<<<< */}
             <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
-            onPress={() => props.navigation.navigate("Message")}>
+              onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -118,7 +118,7 @@ const Chat = (props) => {
 
             {/* >>>>>>>>>>>>> 06 <<<<<<<<<<<< */}
             <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
-            onPress={() => props.navigation.navigate("Message")}>
+              onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -132,7 +132,7 @@ const Chat = (props) => {
 
             {/* >>>>>>>>>>>>> 07 <<<<<<<<<<<< */}
             <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
-            onPress={() => props.navigation.navigate("Message")}>
+              onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -147,7 +147,7 @@ const Chat = (props) => {
 
             {/* >>>>>>>>>>>>> 08 <<<<<<<<<<<< */}
             <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}
-            onPress={() => props.navigation.navigate("Message")}>
+              onPress={() => props.navigation.navigate("Message")}>
               <View style={styles._user_profile_main}>
                 <View style={styles._user_image_view}>
                   <Image source={require('./../../assets/chat1.png')} style={styles._user_image} />
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "65%",
     justifyContent: "space-between",
-    elevation: 2,
+    // elevation: 2,
     backgroundColor: "white",
     borderRadius: 5,
     padding: 2,

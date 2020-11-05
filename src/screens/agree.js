@@ -25,7 +25,7 @@ const Agree = (props) => {
             {/* <<<<<<<<<<<<<<<<<<<<<<<<<<   LOGO SECTION  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
             <ScrollView style={{ margin: 20 }}>
                 <Image source={require('./../../assets/wel_logo.png')} style={styles._logo} />
-                <Text style={styles._roles}>Please follow these house roles</Text>
+                <Text style={styles._roles}>Please follow these house rules</Text>
 
                 {/* <<<<<<<    01 >>>>>>>>>>> */}
                 <View style={styles._main}>
@@ -45,7 +45,7 @@ const Agree = (props) => {
                     </View>
                     <View style={styles._heading_main}>
                         <Text style={styles._heading}>Stay Safe</Text>
-                        <Text style={styles._dis}>Don't be too quick to give out personal informatatin.</Text>
+                        <Text style={styles._dis}>Don't be too quick to give out personal information.</Text>
                     </View>
                 </View>
 
@@ -56,7 +56,7 @@ const Agree = (props) => {
                     </View>
                     <View style={styles._heading_main}>
                         <Text style={styles._heading}>Play it cool</Text>
-                        <Text style={styles._dis}>Respect others and treat them as your would like ti be treated.</Text>
+                        <Text style={styles._dis}>Respect others and treat them as you would like to be treated.</Text>
                     </View>
                 </View>
 

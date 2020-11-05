@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { FontAwesome5 } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
@@ -23,6 +24,20 @@ const Message = (props) => {
         };
     });
 
+    openGallert = async () => {
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        });
+
+        console.log(result);
+
+        if (!result.cancelled) {
+            setGalleryPic(result.uri);
+        }
+    }
     return (
         <View style={styles.container}>
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
@@ -41,10 +56,13 @@ const Message = (props) => {
                         </View>
                     </View>
                     <View style={styles._cal}>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => props.navigation.navigate("AudioCall")}>
+
                             <Ionicons name="ios-call" size={24} color="#CA2C30" />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => props.navigation.navigate("Vodeocall")}>
                             <FontAwesome5 name="video" size={22} color="#CA2C30" />
                         </TouchableOpacity>
                         <TouchableOpacity>
@@ -164,10 +182,12 @@ const Message = (props) => {
                     placeholder="Type a  message"
                 />
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                onPress={() => props.navigation.navigate("Camera")}>
                     <Entypo name="camera" size={24} color="#30439B" style={{ marginLeft: 40 }} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => openGallert()}>
                     <Ionicons name="ios-attach" size={24} color="#30439B" />
                 </TouchableOpacity>
                 <TouchableOpacity>

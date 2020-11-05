@@ -84,7 +84,7 @@ const EditEnfo = (props) => {
 
                     {/* <<<<<<<<<<<< Livig in >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
-                        <Text style={styles._heading}>Livig in</Text>
+                        <Text style={styles._heading}>Living in</Text>
                         <TextInput
                             style={styles._mob_number_setting_main}
                             placeholder="Add city"

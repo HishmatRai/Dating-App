@@ -67,7 +67,7 @@ const Moreinterest = (props) => {
                 <View style={styles._name_main}>
                     <TextInput
                         style={styles._mob_number_setting_main}
-                        placeholder="My Fitst Name"
+                        placeholder="My First Name"
                         style={styles._name_input}
                         placeholderTextColor="#2545A3"
                     />
@@ -131,7 +131,7 @@ const Moreinterest = (props) => {
                         <Text style={styles._chips_text2}>Dignity</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Free Speed</Text>
+                        <Text style={styles._chips_text}>Free Speech</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles._chips}>
                         <Text style={styles._chips_text}>MAGA</Text>
@@ -141,10 +141,10 @@ const Moreinterest = (props) => {
                 {/* <<<<<<<<<<  4 >>>>>>>>>>>.*/}
                 <View style={styles._chips_main}>
                     <TouchableOpacity style={styles._chips2}>
-                        <Text style={styles._chips_text2}>Back the blue</Text>
+                        <Text style={styles._chips_text3}>Back the blue</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Self - reliance</Text>
+                        <Text style={styles._chips_text4}>Self - reliance</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -164,20 +164,20 @@ const Moreinterest = (props) => {
                 {/* <<<<<<<<<<  6 >>>>>>>>>>>.*/}
                 <View style={styles._chips_main}>
                     <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Free  market</Text>
+                        <Text style={styles._chips_text5}>Free  market</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Indivisalism</Text>
+                        <Text style={styles._chips_text5}>Indivisalism</Text>
                     </TouchableOpacity>
                 </View>
 
                 {/* <<<<<<<<<<  7 >>>>>>>>>>>.*/}
                 <View style={styles._chips_main}>
                     <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Constitution</Text>
+                        <Text style={styles._chips_text5}>Constitution</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Support Troops</Text>
+                        <Text style={styles._chips_text4}>Support Troops</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -370,6 +370,36 @@ const styles = StyleSheet.create({
         fontSize: 15,
         textAlign: "center"
     },
+    _chips_text3: {
+        color: "#30439B",
+        paddingBottom: 5,
+        paddingLeft: 40,
+        paddingRight: 40,
+        paddingTop: 5,
+        fontWeight: "bold",
+        fontSize: 15,
+        textAlign: "center"
+    },
+    _chips_text4: {
+        color: "#CA2C30",
+        paddingBottom: 5,
+        paddingLeft: 30,
+        paddingRight: 30,
+        paddingTop: 5,
+        fontWeight: "bold",
+        fontSize: 15,
+        textAlign: "center"
+    },
+    _chips_text5: {
+        color: "#CA2C30",
+        paddingBottom: 5,
+        paddingLeft: 40,
+        paddingRight: 40,
+        paddingTop: 5,
+        fontWeight: "bold",
+        fontSize: 15,
+        textAlign: "center"
+    },
     _more_button_txt: {
         color: "#CA2C30"
     },
@@ -395,7 +425,8 @@ const styles = StyleSheet.create({
     },
     _date_picker: {
         marginTop: -9,
-        marginRight: 10
+        // marginRight: 50,
+        backgroundColor:"white"
     }
 
 

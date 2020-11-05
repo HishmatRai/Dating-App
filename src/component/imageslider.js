@@ -12,7 +12,7 @@ import { Fontisto } from '@expo/vector-icons';
 //import AppIntroSlider to use it
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 export default class Imageslider extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state = {
             showRealApp: false,
@@ -67,7 +67,8 @@ export default class Imageslider extends React.Component {
                         <TouchableOpacity style={styles._large_button}>
                             <Entypo name="star" size={34} color="#FCC24C" />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._large_button}>
+                        <TouchableOpacity style={styles._large_button}
+                            onPress={() => props.navigation.navigate("Message")}>
                             <Ionicons name="ios-chatbubbles" size={34} color="#CA2C30" />
                         </TouchableOpacity>
                     </View>
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
     slide: {
         flex: 1,
         backgroundColor: "white",
-        marginBottom:50
+        marginBottom: 50
     },
     buttonCircle: {
         borderColor: "#347AF0",

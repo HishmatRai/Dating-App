@@ -45,7 +45,7 @@ export default class MyDatePicker extends Component {
                 <DatePicker
                     showIcon={false}
                     androidMode="spinner"
-                    style={{ width: 300, height: 10 }}
+                    style={{ width: 200, height: 30}}
                     date={this.state.date}
                     mode="date"
                     placeholder="DD/MM/YYYY"
@@ -58,6 +58,7 @@ export default class MyDatePicker extends Component {
                             backgroundColor: 'white',
                             borderWidth: 1,
                             borderColor: 'white',
+                            marginLeft:100
                         },
                     }}
                     onDateChange={(date) => {
@@ -70,7 +71,8 @@ export default class MyDatePicker extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: 'center',
+        // flex: 1,
+        // alignItems: 'center',
+        // backgroundColor: "red"
     },
 });
