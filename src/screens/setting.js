@@ -427,12 +427,27 @@ const Setting = (props) => {
                                     <Text style={styles._current_location}>My Current Location</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={{ marginTop: 10 }}>
-                                <Text style={styles._global}>Global</Text>
-                                <View style={styles._toggle_button}>
-                                    <ToggleButton />
+                            {/* <View style={{ marginTop: 10 }}>
+                                <View style={styles._text_area}>
+                                    <Text style={styles._global}>Global</Text>
+                                    
+
                                 </View>
+                                <View style={styles._button_area}>
+                                    <ToggleButton />
+                                
+                                </View>
+                            </View> */}
+                                 <View style={{ marginTop: 20 }}>
+                        <View style={styles._mob_number_setting_main_sett}>
+                            <View style={styles._text_area}>
+                                <Text style={styles._mob_number_heading}>Send Read Receipts</Text>
                             </View>
+                            <View style={styles._button_area}>
+                                <ToggleButton />
+                            </View>
+                        </View>
+                    </View>
                         </View>
                     </View>
 
@@ -441,16 +456,23 @@ const Setting = (props) => {
                     {/* <<<<<<<<<<<< Date Right >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
                         <View style={styles._mob_number_setting_main}>
-                            <Text style={styles._mob_number_heading}>Show me on Date Right</Text>
-                            <ToggleButton />
+                            <View style={styles._text_area}>
+                                <Text style={styles._mob_number_heading}>Show me on Date Right</Text>
+
+                            </View>
+                            <View style={styles._button_area}>
+                                <ToggleButton />
+                            </View>
                         </View>
                     </View>
 
                     {/* <<<<<<<<<<<< Share my feed >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
                         <View style={styles._mob_number_setting_main}>
-                            <Text style={styles._mob_number_heading}>Share my feed</Text>
-                            <View style={{ marginRight: 5 }}>
+                            <View style={styles._text_area}>
+                                <Text style={styles._mob_number_heading}>Share my feed</Text>
+                            </View>
+                            <View style={styles._button_area}>
                                 <ToggleButton />
                             </View>
                         </View>
@@ -459,8 +481,10 @@ const Setting = (props) => {
                     {/* <<<<<<<<<<<< Recommended sort >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
                         <View style={styles._mob_number_setting_main}>
-                            <Text style={styles._mob_number_heading}>Recommended sort</Text>
-                            <View style={{ marginRight: 3 }}>
+                            <View style={styles._text_area}>
+                                <Text style={styles._mob_number_heading}>Recommended sort</Text>
+                            </View>
+                            <View style={styles._button_area}>
                                 <ToggleButton />
                             </View>
                         </View>
@@ -482,8 +506,10 @@ const Setting = (props) => {
                     <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Top Picks</Text>
                         <View style={styles._mob_number_setting_main}>
-                            <Text style={styles._mob_number_heading}>Manage Top Picks</Text>
-                            <View style={{ marginRight: 3 }}>
+                            <View style={styles._text_area}>
+                                <Text style={styles._mob_number_heading}>Manage Top Picks</Text>
+                            </View>
+                            <View style={styles._button_area}>
                                 <ToggleButton />
                             </View>
                         </View>
@@ -494,8 +520,10 @@ const Setting = (props) => {
                     <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Read Receipts</Text>
                         <View style={styles._mob_number_setting_main}>
-                            <Text style={styles._mob_number_heading}>Send Read Receipts</Text>
-                            <View style={{ marginRight: 3 }}>
+                            <View style={styles._text_area}>
+                                <Text style={styles._mob_number_heading}>Send Read Receipts</Text>
+                            </View>
+                            <View style={styles._button_area}>
                                 <ToggleButton />
                             </View>
                         </View>
@@ -506,8 +534,10 @@ const Setting = (props) => {
                     <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Swipe Surge</Text>
                         <View style={styles._mob_number_setting_main}>
-                            <Text style={styles._mob_number_heading}>Show me in Swipe Surge</Text>
-                            <View style={{ marginRight: 3 }}>
+                            <View style={styles._text_area}>
+                                <Text style={styles._mob_number_heading}>Show me in Swipe Surge</Text>
+                            </View>
+                            <View style={styles._button_area}>
                                 <ToggleButton />
                             </View>
                         </View>
@@ -517,8 +547,10 @@ const Setting = (props) => {
                     <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Activity Status</Text>
                         <View style={styles._mob_number_setting_main}>
-                            <Text style={styles._mob_number_heading}>Show me Activity Status</Text>
-                            <View style={{ marginRight: 3 }}>
+                            <View style={styles._text_area}>
+                                <Text style={styles._mob_number_heading}>Show me Activity Status</Text>
+                            </View>
+                            <View style={styles._button_area}>
                                 <ToggleButton />
                             </View>
                         </View>
@@ -529,21 +561,27 @@ const Setting = (props) => {
                         <Text style={styles._heading}>Notification</Text>
                         <View style={styles._notification_main}>
                             <View style={styles._mob_number_setting_main3}>
-                                <Text style={styles._mob_number_heading}>Email</Text>
-                                <View style={{ marginRight: 3 }}>
+                                <View style={styles._text_area}>
+                                    <Text style={styles._mob_number_heading}>Email</Text>
+                                </View>
+                                <View style={styles._button_area}>
                                     <ToggleButton />
                                 </View>
                             </View>
                             <View style={styles._mob_number_setting_main3}>
-                                <Text style={styles._mob_number_heading}>Push Notification</Text>
-                                <View style={{ marginRight: 3 }}>
+                                <View style={styles._text_area}>
+                                    <Text style={styles._mob_number_heading}>Push Notification</Text>
+                                </View>
+                                <View style={styles._button_area}>
                                     <ToggleButton />
                                 </View>
                             </View>
 
                             <View style={styles._mob_number_setting_main3}>
-                                <Text style={styles._mob_number_heading}>Receive news letters</Text>
-                                <View style={{ marginRight: 3 }}>
+                                <View style={styles._text_area}>
+                                    <Text style={styles._mob_number_heading}>Receive news letters</Text>
+                                </View>
+                                <View style={styles._button_area}>
                                     <ToggleButton />
                                 </View>
                             </View>
@@ -699,6 +737,15 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         padding: 10
     },
+    _mob_number_setting_main_sett: {
+      
+  
+        margin: 1,
+        backgroundColor: "white",
+        flexDirection: "row",
+        justifyContent: "space-between",
+       
+    },
     _mob_number_setting_main3: {
         padding: 2,
         margin: 1,
@@ -747,10 +794,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         paddingTop: 20
     },
-    _toggle_button: {
-        marginTop: -20,
-        marginRight: -150
-    },
+
     _global_dis: {
         color: "gray",
         fontSize: 15,
@@ -893,6 +937,15 @@ const styles = StyleSheet.create({
         fontSize: 22,
         paddingTop: 5,
         paddingBottom: 10
+    },
+    _text_area: {
+        // backgroundColor: "red",
+        width: "80%"
+    },
+    _button_area: {
+        // backgroundColor: "green",
+        width: "20%"
+
     }
 });
 

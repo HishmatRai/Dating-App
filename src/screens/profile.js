@@ -136,10 +136,10 @@ const Profile = (props) => {
                 <View style={{ margin: 20 }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20 }}>
                         <Text style={styles._last_matches}>Last Matches</Text>
-                        <TouchableOpacity
+                        {/* <TouchableOpacity
                             onPress={() => props.navigation.navigate("lastMatches")}>
                             <Text style={styles._more_information_button_text}>View All</Text>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                     </View>
 
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>

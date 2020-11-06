@@ -15,7 +15,7 @@ const IntrestedRadio = () => {
                     uncheckedColor="#30439B"
                     color="#30439B"
                 />
-                <Text style={styles._select_text}>Dating</Text>
+                <Text style={styles._select_text}>Man</Text>
             </View>
             <View style={styles._select_gender2}>
                 <RadioButton
@@ -26,9 +26,9 @@ const IntrestedRadio = () => {
                     color="#30439B"
 
                 />
-                <Text style={styles._select_text}>Friendship</Text>
+                <Text style={styles._select_text}>Woman</Text>
             </View>
-            <View style={styles._select_gender2}>
+            {/* <View style={styles._select_gender2}>
                 <RadioButton
                     value="third"
                     status={checked === 'third' ? 'checked' : 'unchecked'}
@@ -38,7 +38,7 @@ const IntrestedRadio = () => {
 
                 />
                 <Text style={styles._select_text}>Business</Text>
-            </View>
+            </View> */}
 
         </View>
     );

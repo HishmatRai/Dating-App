@@ -16,6 +16,7 @@ const Moreinterest = (props) => {
     const [galleryPic, setGalleryPic] = useState(null);
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
+    const [images, setimages] = useState([])
 
     const onChange = ({ window, screen }) => {
         setDimensions({ window, screen });
@@ -26,9 +27,10 @@ const Moreinterest = (props) => {
         return () => {
             Dimensions.removeEventListener("change", onChange);
         };
-    });
+    }, []);
 
     openGallert = async () => {
+        let arr = images
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
             allowsEditing: true,
@@ -36,15 +38,29 @@ const Moreinterest = (props) => {
             quality: 1,
         });
 
-        console.log(result);
 
         if (!result.cancelled) {
-            setGalleryPic(result.uri);
+            arr.push(result.uri)
+            setimages(arr)
+
+            // setGalleryPic(result.uri);
         }
     }
 
 
-    useEffect(() => {
+    // useEffect(() => {
+    //     (async () => {
+    //         let { status } = await Location.requestPermissionsAsync();
+    //         if (status !== 'granted') {
+    //             setErrorMsg('Permission to access location was denied');
+    //         }
+
+    //         let location = await Location.getCurrentPositionAsync({});
+    //         setLocation(location);
+    //     })();
+    // }, []);
+
+    const locationPermission = () => {
         (async () => {
             let { status } = await Location.requestPermissionsAsync();
             if (status !== 'granted') {
@@ -54,8 +70,8 @@ const Moreinterest = (props) => {
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
         })();
-    }, []);
-
+    }
+    console.log("------------------------------------------->", images)
     return (
         <View style={styles.container}>
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
@@ -85,7 +101,7 @@ const Moreinterest = (props) => {
                 {/* <<<<<<<< Location <<<<<<<< */}
                 <View style={styles._location_main}>
                     <Text style={styles._location}>Location</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => locationPermission()}>
                         <MaterialIcons name="my-location" size={24} color="#F03030" />
                     </TouchableOpacity>
                 </View>
@@ -195,17 +211,35 @@ const Moreinterest = (props) => {
                 {/* <<<<<<<< Add Photos <<<<<<<< */}
                 <Text style={styles._gender}>Add Photos</Text>
                 <View style={styles._add_photos_main}>
-                    <View style={styles._add_photos_view}>
-                        <Image source={require('./../../assets/addphoto1.png')} style={styles._add_photos_show} />
-                    </View>
+                    <ScrollView horizontal={true}>
+
+                        {images.length !== 1
+                            ? images.map((val, i) => {
+                                return (
+                                    <View style={styles._add_photos_view}>
+                                        <Image source={{ uri: val }} style={styles._add_photos_show} />
+                                    </View>
+                                    // <Image source={val} style={styles._add_photos_show} />
+                                )
+                            })
+                            :
+                            null
+                        }
+                    </ScrollView>
+                    {/* <Image source={require('./../../assets/addphoto1.png')} style={styles._add_photos_show} /> */}
                     <View>
-                        <View style={styles._add_photos_view}>
-                        </View>
-                        <TouchableOpacity style={styles._add_icon}
+                        {/* <View style={styles._add_photos_view}>
+                            {galleryPic === null
+                                ? null
+                                :
+                                <Image source={require('./../../assets/addphoto1.png')} style={styles._add_photos_show} />
+                            }
+                        </View> */}
+                        {/* <TouchableOpacity style={styles._add_icon}
                             onPress={() => openGallert()}
                         >
                             <Ionicons name="md-add-circle" size={24} color="#CA2C30" />
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                     </View>
 
                     <View>
@@ -214,6 +248,7 @@ const Moreinterest = (props) => {
                         <TouchableOpacity style={styles._add_icon}
                             onPress={() => openGallert()}
                         >
+
                             <Ionicons name="md-add-circle" size={24} color="#CA2C30" />
                         </TouchableOpacity>
                     </View>
@@ -373,8 +408,8 @@ const styles = StyleSheet.create({
     _chips_text3: {
         color: "#30439B",
         paddingBottom: 5,
-        paddingLeft: 40,
-        paddingRight: 40,
+        paddingLeft: 30,
+        paddingRight: 30,
         paddingTop: 5,
         fontWeight: "bold",
         fontSize: 15,
@@ -383,8 +418,8 @@ const styles = StyleSheet.create({
     _chips_text4: {
         color: "#CA2C30",
         paddingBottom: 5,
-        paddingLeft: 30,
-        paddingRight: 30,
+        paddingLeft: 25,
+        paddingRight: 25,
         paddingTop: 5,
         fontWeight: "bold",
         fontSize: 15,
@@ -393,8 +428,8 @@ const styles = StyleSheet.create({
     _chips_text5: {
         color: "#CA2C30",
         paddingBottom: 5,
-        paddingLeft: 40,
-        paddingRight: 40,
+        paddingLeft: 30,
+        paddingRight: 30,
         paddingTop: 5,
         fontWeight: "bold",
         fontSize: 15,
@@ -415,7 +450,8 @@ const styles = StyleSheet.create({
         height: 94,
         borderWidth: 1,
         borderColor: "#CA2C30",
-        borderRadius: 5
+        borderRadius: 5,
+        margin: 5
     },
     _add_icon: {
         alignSelf: "flex-end",
@@ -426,9 +462,12 @@ const styles = StyleSheet.create({
     _date_picker: {
         marginTop: -9,
         // marginRight: 50,
-        backgroundColor:"white"
-    }
+        backgroundColor: "white"
+    },
 
+    _add_photos_show: {
+        flex: 1
+    }
 
 });
 

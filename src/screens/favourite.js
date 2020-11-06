@@ -172,8 +172,8 @@ class Favourite extends React.Component {
                 <View style={styles._bottm_sheet_main3}>
                   <Text style={styles._location}>Distance</Text>
                   <TouchableOpacity style={{ flexDirection: "row" }}>
-                    <Entypo name="chevron-small-left" size={24} color="black" />
-                    <Text style={styles._reset}>3 mi</Text>
+                    {/* <Entypo name="chevron-small-left" size={24} color="black" /> */}
+                    {/* <Text style={styles._reset}>3 mi</Text> */}
                   </TouchableOpacity>
                 </View>
                 <DistanceSlider />
@@ -248,13 +248,15 @@ const styles = StyleSheet.create({
   },
   _card_main: {
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   _Card_first: {
     elevation: 2,
     width: "48%",
     borderRadius: 15,
-    marginTop: 20
+    marginTop: 20,
+    backgroundColor: "white",
+
 
   },
   _active_main: {
@@ -279,7 +281,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 20,
     fontWeight: "bold",
-    fontSize: 15
+    fontSize: 15,
+    // backgroundColor:"red",
+    width: "90%",
+    alignSelf: "center"
   },
   _active: {
     color: "#757E90",

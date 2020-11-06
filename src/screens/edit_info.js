@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text, Dimensions, TextInput, StatusBar, ScrollView, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, Dimensions, TextInput, StatusBar, ScrollView, TouchableOpacity, Picker } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import ToggleButton from './../component/togglebutton'
 import AboutInput from './../component/about_input'
@@ -21,6 +21,13 @@ const EditEnfo = (props) => {
         };
     });
 
+    const [selectedValue, setSelectedValue] = useState("java");
+    useEffect(() => {
+        Dimensions.addEventListener("change", onChange);
+        return () => {
+            Dimensions.removeEventListener("change", onChange);
+        };
+    });
     return (
         <View style={styles.container}>
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
@@ -48,10 +55,26 @@ const EditEnfo = (props) => {
                     {/* <<<<<<<<<<<< Area Of Interest >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Area Of Interest</Text>
-                        <TextInput
+                        {/* <TextInput
                             style={styles._mob_number_setting_main}
                             placeholder="Hard Work, Chairty , Gun Fight, Humanilism"
-                        />
+                        /> */}
+                        <View style={styles._mob_number_setting_main}>
+                            <Picker
+                                selectedValue={selectedValue}
+                                style={{ height: 30, width: "100%", color: "gray" }}
+                                onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+
+                            >
+                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="java" />
+                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
+                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
+                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
+                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
+                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
+                            </Picker>
+                        </View>
+
                     </View>
 
 
@@ -112,14 +135,18 @@ const EditEnfo = (props) => {
                         <Text style={styles._heading}>Control Your Profile</Text>
                         <View style={styles._notification_main}>
                             <View style={styles._mob_number_setting_main3}>
-                                <Text style={styles._mob_number_heading}>Don't Show My Age</Text>
-                                <View style={{ marginRight: 3 }}>
+                                <View style={styles._text_area}>
+                                    <Text style={styles._mob_number_heading}>Don't Show My Age</Text>
+                                </View>
+                                <View style={styles._button_area}>
                                     <ToggleButton />
                                 </View>
                             </View>
                             <View style={styles._mob_number_setting_main3}>
-                                <Text style={styles._mob_number_heading}>Make My Distance Invisible</Text>
-                                <View style={{ marginLeft: -30 }}>
+                                <View style={styles._text_area}>
+                                    <Text style={styles._mob_number_heading}>Make My Distance Invisible</Text>
+                                </View>
+                                <View style={styles._button_area}>
                                     <ToggleButton />
                                 </View>
                             </View>
@@ -200,7 +227,15 @@ const styles = StyleSheet.create({
         fontFamily: "MontserratSemiBold",
         fontSize: 15
     },
+    _text_area: {
+        // backgroundColor: "red",
+        width: "80%"
+    },
+    _button_area: {
+        // backgroundColor: "green",
+        width: "20%"
 
+    }
 });
 
 export default EditEnfo;

@@ -62,7 +62,7 @@ const Explore = (props) => {
           </View>
 
           {/* large image */}
-          <Slider />
+          <Slider  path={props}/>
 
         </ScrollView>
       </View>

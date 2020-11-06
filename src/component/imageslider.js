@@ -68,7 +68,7 @@ export default class Imageslider extends React.Component {
                             <Entypo name="star" size={34} color="#FCC24C" />
                         </TouchableOpacity>
                         <TouchableOpacity style={styles._large_button}
-                            onPress={() => props.navigation.navigate("Message")}>
+                            onPress={() => this.props.path.navigation.navigate("Message")}>
                             <Ionicons name="ios-chatbubbles" size={34} color="#CA2C30" />
                         </TouchableOpacity>
                     </View>
