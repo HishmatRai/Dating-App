@@ -60,7 +60,7 @@ const Continue = (props) => {
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
             {/* <<<<<<<<<<<<<<<<<<<<<<<<<<   LOGO SECTION  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
             <ScrollView style={{ margin: 20 }} showsVerticalScrollIndicator={false} >
-                <Image source={require('./../../assets/smalllogo.png')} style={styles._logo} />
+                <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
 
                 {/* <<<<<<<< Name <<<<<<<< */}
                 <View style={styles._name_main}>

@@ -49,10 +49,10 @@ const Setting = (props) => {
                             setModalVisible(true);
                         }}>
                         <View style={{ flexDirection: "row" }}>
-                            <Image source={require('./../../assets/logo.png')} style={styles._logo} />
-                            <Text style={styles._premium}>Premium</Text>
+                            <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
+                            <Text style={styles._premium}> Premium</Text>
                         </View>
-                        <Text style={styles._premium_des}>Unlock  our most exclusicve features</Text>
+                        <Text style={styles._premium_des}>Unlock our most exclusicve features</Text>
                     </TouchableOpacity>
                     {/* <<<<<<<<<<<<<  model  >>>>>>>>>>>>> */}
 
@@ -75,7 +75,10 @@ const Setting = (props) => {
                                 >
                                     <EvilIcons name="close" size={24} color="black" />
                                 </TouchableOpacity>
-                                <Image source={require('./../../assets/premium.png')} style={styles._premium_logo} />
+                                <View style={{ flexDirection: "row" }}>
+                                    <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
+                                    <Text style={styles._premium}> Premium</Text>
+                                </View>
                                 <View style={{ flexDirection: "row" }}>
                                     <View style={styles._features}>
                                         <Text style={styles._features_heading}>Features</Text>
@@ -157,7 +160,7 @@ const Setting = (props) => {
                                     </View>
                                 </View>
                                 <TouchableOpacity style={styles._continue_button}
-                                // onPress={() => props.navigation.navigate("Setting")}
+                                //  onPress={() => props.navigation.navigate("Message")}
                                 >
                                     <Text style={styles._continue_button_text}>Continue</Text>
                                 </TouchableOpacity>
@@ -172,7 +175,7 @@ const Setting = (props) => {
                             setModalVisible2(true);
                         }}>
                         <View style={{ flexDirection: "row" }}>
-                            <Image source={require('./../../assets/logo.png')} style={styles._logo} />
+                            <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
                             <AntDesign name="plus" size={24} color="#30439B" />
                         </View>
                         <Text style={styles._premium_des}>Unlimited likes & more</Text>
@@ -198,7 +201,10 @@ const Setting = (props) => {
                                 >
                                     <EvilIcons name="close" size={24} color="black" />
                                 </TouchableOpacity>
-                                <Image source={require('./../../assets/plus.png')} style={styles._premium_logo} />
+                                <View style={{ flexDirection: "row" }}>
+                                    <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
+                                    <AntDesign name="plus" size={24} color="#30439B" />
+                                </View>
                                 <View style={{ flexDirection: "row" }}>
                                     <View style={styles._features}>
                                         <Text style={styles._features_heading}>Features</Text>
@@ -276,7 +282,7 @@ const Setting = (props) => {
                                         <Text style={styles._features_text}>Cost</Text>
                                     </View>
                                     <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>$19.95 (per month)</Text>
+                                        <Text style={styles._premium_text}>$19 (per month)</Text>
                                     </View>
                                 </View>
                                 <TouchableOpacity style={styles._continue_button}>
@@ -291,10 +297,10 @@ const Setting = (props) => {
                             setModalVisible3(true);
                         }}>
                         <View style={{ flexDirection: "row" }}>
-                            <Image source={require('./../../assets/logo.png')} style={styles._logo} />
-                            <Text style={styles._standard}>STANDARD</Text>
+                            <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
+                            <Text style={styles._standard}> STANDARD</Text>
                         </View>
-                        <Text style={styles._premium_des}>Watch add to earn 20 credits</Text>
+                        {/* <Text style={styles._premium_des}>Watch add to earn 20 credits</Text> */}
                     </TouchableOpacity>
 
                     {/* <<<<<<<<<<<<<  model  >>>>>>>>>>>>> */}
@@ -318,7 +324,10 @@ const Setting = (props) => {
                                 >
                                     <EvilIcons name="close" size={24} color="black" />
                                 </TouchableOpacity>
-                                <Image source={require('./../../assets/standard.png')} style={styles._premium_logo} />
+                                <View style={{ flexDirection: "row" }}>
+                                    <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
+                                    <Text style={styles._standard}> STANDARD</Text>
+                                </View>
                                 <View style={{ flexDirection: "row" }}>
                                     <View style={styles._features}>
                                         <Text style={styles._features_heading}>Features</Text>
@@ -364,7 +373,7 @@ const Setting = (props) => {
                                         <Text style={styles._features_text}>Quick text without match</Text>
                                     </View>
                                     <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}> $4.95 (per chat)</Text>
+                                        <Text style={styles._premium_text}> No</Text>
                                     </View>
                                 </View>
                                 <View style={{ flexDirection: "row" }}>
@@ -372,7 +381,7 @@ const Setting = (props) => {
                                         <Text style={styles._features_text}>Boost profile (last 2 hrs)</Text>
                                     </View>
                                     <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}> $4.95 (each)</Text>
+                                        <Text style={styles._premium_text}>No</Text>
                                     </View>
                                 </View>
                                 <View style={{ flexDirection: "row" }}>
@@ -380,7 +389,7 @@ const Setting = (props) => {
                                         <Text style={styles._features_text}>Super like</Text>
                                     </View>
                                     <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>$4.95 (each)</Text>
+                                        <Text style={styles._premium_text}>No</Text>
                                     </View>
                                 </View>
                                 <View style={{ flexDirection: "row" }}>
@@ -427,27 +436,17 @@ const Setting = (props) => {
                                     <Text style={styles._current_location}>My Current Location</Text>
                                 </TouchableOpacity>
                             </View>
-                            {/* <View style={{ marginTop: 10 }}>
-                                <View style={styles._text_area}>
-                                    <Text style={styles._global}>Global</Text>
-                                    
-
-                                </View>
-                                <View style={styles._button_area}>
-                                    <ToggleButton />
-                                
+                         
+                            {/* <View style={{ marginTop: 20 }}>
+                                <View style={styles._mob_number_setting_main_sett}>
+                                    <View style={styles._text_area}>
+                                        <Text style={styles._mob_number_heading}>Send Read Receipts</Text>
+                                    </View>
+                                    <View style={styles._button_area}>
+                                        <ToggleButton />
+                                    </View>
                                 </View>
                             </View> */}
-                                 <View style={{ marginTop: 20 }}>
-                        <View style={styles._mob_number_setting_main_sett}>
-                            <View style={styles._text_area}>
-                                <Text style={styles._mob_number_heading}>Send Read Receipts</Text>
-                            </View>
-                            <View style={styles._button_area}>
-                                <ToggleButton />
-                            </View>
-                        </View>
-                    </View>
                         </View>
                     </View>
 
@@ -467,7 +466,7 @@ const Setting = (props) => {
                     </View>
 
                     {/* <<<<<<<<<<<< Share my feed >>>>>>>>>>>> */}
-                    <View style={{ marginTop: 20 }}>
+                    {/* <View style={{ marginTop: 20 }}>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
                                 <Text style={styles._mob_number_heading}>Share my feed</Text>
@@ -476,10 +475,10 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View>
+                    </View> */}
 
                     {/* <<<<<<<<<<<< Recommended sort >>>>>>>>>>>> */}
-                    <View style={{ marginTop: 20 }}>
+                    {/* <View style={{ marginTop: 20 }}>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
                                 <Text style={styles._mob_number_heading}>Recommended sort</Text>
@@ -488,10 +487,10 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View>
+                    </View> */}
 
                     {/* <<<<<<<<<<<< Web Profile Setting >>>>>>>>>>>> */}
-                    <View style={{ marginTop: 20 }}>
+                    {/* <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Web Profile</Text>
                         <View style={styles._mob_number_setting_main}>
                             <Text style={styles._mob_number_heading}>Username</Text>
@@ -500,10 +499,10 @@ const Setting = (props) => {
                                 <EvilIcons name="chevron-right" size={24} color="gray" />
                             </TouchableOpacity>
                         </View>
-                    </View>
+                    </View> */}
 
                     {/* <<<<<<<<<<<< Top Picks >>>>>>>>>>>> */}
-                    <View style={{ marginTop: 20 }}>
+                    {/* <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Top Picks</Text>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
@@ -513,11 +512,11 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View>
+                    </View> */}
 
 
                     {/* <<<<<<<<<<<< Read Receipts >>>>>>>>>>>> */}
-                    <View style={{ marginTop: 20 }}>
+                    {/* <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Read Receipts</Text>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
@@ -527,11 +526,11 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View>
+                    </View> */}
 
 
                     {/* <<<<<<<<<<<< Swipe Surge >>>>>>>>>>>> */}
-                    <View style={{ marginTop: 20 }}>
+                    {/* <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Swipe Surge</Text>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
@@ -541,7 +540,7 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View>
+                    </View> */}
 
                     {/* <<<<<<<<<<<< Activity Status >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
@@ -560,14 +559,14 @@ const Setting = (props) => {
                     <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Notification</Text>
                         <View style={styles._notification_main}>
-                            <View style={styles._mob_number_setting_main3}>
+                            {/* <View style={styles._mob_number_setting_main3}>
                                 <View style={styles._text_area}>
                                     <Text style={styles._mob_number_heading}>Email</Text>
                                 </View>
                                 <View style={styles._button_area}>
                                     <ToggleButton />
                                 </View>
-                            </View>
+                            </View> */}
                             <View style={styles._mob_number_setting_main3}>
                                 <View style={styles._text_area}>
                                     <Text style={styles._mob_number_heading}>Push Notification</Text>
@@ -577,14 +576,14 @@ const Setting = (props) => {
                                 </View>
                             </View>
 
-                            <View style={styles._mob_number_setting_main3}>
+                            {/* <View style={styles._mob_number_setting_main3}>
                                 <View style={styles._text_area}>
                                     <Text style={styles._mob_number_heading}>Receive news letters</Text>
                                 </View>
                                 <View style={styles._button_area}>
                                     <ToggleButton />
                                 </View>
-                            </View>
+                            </View> */}
                         </View>
                     </View>
 
@@ -597,10 +596,10 @@ const Setting = (props) => {
                                 <Text style={styles._mob_number_heading}>Manage Payment Account</Text>
                                 <EvilIcons name="chevron-right" size={24} color="gray" />
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles._mob_number_setting_main3}>
+                            {/* <TouchableOpacity style={styles._mob_number_setting_main3}>
                                 <Text style={styles._mob_number_heading}>Restore Purchase</Text>
                                 <EvilIcons name="chevron-right" size={24} color="gray" />
-                            </TouchableOpacity>
+                            </TouchableOpacity> */}
                         </View>
                     </View>
 
@@ -632,7 +631,7 @@ const Setting = (props) => {
                         <TouchableOpacity >
                             <Text style={styles._heading}>Share Date Right</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity >
+                        {/* <TouchableOpacity >
                             <Text style={styles._heading}>Legal</Text>
                         </TouchableOpacity>
                         <TouchableOpacity >
@@ -643,7 +642,7 @@ const Setting = (props) => {
                         </TouchableOpacity>
                         <TouchableOpacity >
                             <Text style={styles._heading}>Terms of Services</Text>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                     </View>
 
 
@@ -688,7 +687,7 @@ const styles = StyleSheet.create({
     },
     _logo: {
         width: 172,
-        height: 32
+        height: 35
 
     },
     _card1: {
@@ -738,13 +737,13 @@ const styles = StyleSheet.create({
         padding: 10
     },
     _mob_number_setting_main_sett: {
-      
-  
+
+
         margin: 1,
         backgroundColor: "white",
         flexDirection: "row",
         justifyContent: "space-between",
-       
+
     },
     _mob_number_setting_main3: {
         padding: 2,

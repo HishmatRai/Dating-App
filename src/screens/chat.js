@@ -1,13 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView, TouchableOpacity, TextInput } from "react-native";
+import { View, StyleSheet, Text, Dimensions, Image, StatusBar, ScrollView, TouchableOpacity, TextInput, Modal, Alert } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
+import { LinearGradient } from 'expo-linear-gradient';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
 const Chat = (props) => {
-  const [dimensions, setDimensions] = useState({ window, screen });
+  _menu = null;
 
+  setMenuRef = ref => {
+    this._menu = ref;
+  };
+
+  hideMenu = () => {
+    this._menu.hide();
+  };
+
+  showMenu = () => {
+    this._menu.show();
+  };
+  const [dimensions, setDimensions] = useState({ window, screen });
+  const [modalVisible, setModalVisible] = useState(false);
   const onChange = ({ window, screen }) => {
     setDimensions({ window, screen });
   };
@@ -35,9 +50,13 @@ const Chat = (props) => {
               <FontAwesome5 name="search" size={15} color="#CA2C30" />
             </TouchableOpacity> */}
           </View>
-          <TouchableOpacity>
-            <Feather name="more-vertical" size={24} color="#363636" />
-          </TouchableOpacity>
+          <Menu
+            ref={this.setMenuRef}
+            button={<Feather onPress={this.showMenu} name="more-vertical" size={24} color="#363636" />}
+          >
+            <MenuItem onPress={this.hideMenu}>Delete Chat</MenuItem>
+            <MenuItem onPress={this.hideMenu}>Block User</MenuItem>
+          </Menu>
         </View>
 
 
@@ -223,8 +242,40 @@ const styles = StyleSheet.create({
   },
   _user_message: {
     color: "gray"
-  }
+  },
+  _model: {
+    flex: 1,
+    // marginTop: 22,
+    backgroundColor: 'rgba(0,0,6,0.7)',
+    justifyContent: "center",
+  },
+  modalView: {
+    margin: 20,
+    // backgroundColor: "white",
+    borderRadius: 5,
+    padding: 25,
+    shadowColor: "#000",
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    // elevation: 8,
 
+  },
+  button: {
+    // backgroundColor: "green",
+    borderRadius: 50,
+    width: "90%",
+    alignSelf: "center",
+    marginTop: 50
+  },
+  _button_txt: {
+    fontWeight: "bold",
+    paddingTop: 10,
+    paddingBottom: 10,
+    textAlign: "center",
+    color: "white",
+    fontSize: 18,
+    fontFamily: "MontserratSemiBold"
+  },
 });
 
 export default Chat;

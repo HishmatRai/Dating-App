@@ -8,7 +8,7 @@ import { Switch, Text, View, StyleSheet } from 'react-native';
 
 export default class ToggleButton extends React.Component {
     //Initial state false for the switch. You can change it to true just to see.
-    state = { switchValue: false };
+    state = { switchValue: true };
 
     toggleSwitch = value => {
         //onValueChange of the switch this function will be called

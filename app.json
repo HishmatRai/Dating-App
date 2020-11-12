@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Dating",
-    "slug": "Dating",
+    "name": "DateRight",
+    "slug": "DateRight",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,11 +23,11 @@
       "favicon": "./assets/favicon.png"
     },
     "ios": {
-      "bundleIdentifier": "com.Dating.Dating",
+      "bundleIdentifier": "com.DateRight.DateRight",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.Dating.Dating",
+      "package": "com.DateRight.DateRight",
       "versionCode": 1
     }
   }

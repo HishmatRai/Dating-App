@@ -7,10 +7,25 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { FontAwesome5 } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
+import { Feather } from '@expo/vector-icons';
+import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
 const Message = (props) => {
+    _menu = null;
+
+    setMenuRef = ref => {
+        this._menu = ref;
+    };
+
+    hideMenu = () => {
+        this._menu.hide();
+    };
+
+    showMenu = () => {
+        this._menu.show();
+    };
     const [dimensions, setDimensions] = useState({ window, screen });
 
     const onChange = ({ window, screen }) => {
@@ -65,9 +80,13 @@ const Message = (props) => {
                             onPress={() => props.navigation.navigate("Vodeocall")}>
                             <FontAwesome5 name="video" size={22} color="#CA2C30" />
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                            <MaterialCommunityIcons name="dots-vertical" size={24} color="#CA2C30" />
-                        </TouchableOpacity>
+                        <Menu
+                            ref={this.setMenuRef}
+                            button={<Feather onPress={this.showMenu} name="more-vertical" size={24} color="#CA2C30" />}
+                        >
+                            <MenuItem onPress={this.hideMenu}>Delete Conversation</MenuItem>
+                            <MenuItem onPress={this.hideMenu}>Block User</MenuItem>
+                        </Menu>
                     </View>
                 </View>
             </View>
@@ -174,16 +193,13 @@ const Message = (props) => {
             </ScrollView>
             {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Message Option    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */}
             <View style={styles._message_main}>
-                <TouchableOpacity>
-                    <Entypo name="emoji-happy" size={24} color="#30439B" style={{ marginLeft: 10 }} />
-                </TouchableOpacity>
                 <TextInput
                     style={styles._input}
                     placeholder="Type a  message"
                 />
 
                 <TouchableOpacity
-                onPress={() => props.navigation.navigate("Camera")}>
+                    onPress={() => props.navigation.navigate("Camera")}>
                     <Entypo name="camera" size={24} color="#30439B" style={{ marginLeft: 40 }} />
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -302,6 +318,7 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         paddingTop: 5,
         marginRight: 20,
+        paddingLeft:10,
         fontWeight: "bold"
     },
     _send_img: {

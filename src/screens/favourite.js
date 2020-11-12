@@ -10,10 +10,22 @@ import AgeSlider from './../component/age_slider'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Intrestingbutton from './../component/interested_radio_button'
 import Togglebuttom from './../component/togglebutton'
-
+import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 
 class Favourite extends React.Component {
+  _menu = null;
 
+  setMenuRef = ref => {
+    this._menu = ref;
+  };
+
+  hideMenu = () => {
+    this._menu.hide();
+  };
+
+  showMenu = () => {
+    this._menu.show();
+  };
   render() {
 
 
@@ -31,9 +43,13 @@ class Favourite extends React.Component {
               >
                 <MaterialCommunityIcons name="filter-variant" size={24} color="#ED3030" />
               </TouchableOpacity>
-              <TouchableOpacity>
-                <Feather name="more-vertical" size={24} color="#ED3030" />
-              </TouchableOpacity>
+              <Menu
+            ref={this.setMenuRef}
+            button={<Feather onPress={this.showMenu} name="more-vertical" size={24} color="#ED3030" />}
+          >
+            <MenuItem onPress={this.hideMenu}>Delete Chat</MenuItem>
+            <MenuItem onPress={this.hideMenu}>Block User</MenuItem>
+          </Menu>
             </View>
           </View>
 
@@ -183,7 +199,7 @@ class Favourite extends React.Component {
                 <View style={styles._bottm_sheet_main3}>
                   <Text style={styles._location}>Interested in</Text>
                   <TouchableOpacity style={{ flexDirection: "row" }}>
-                    <Text style={styles._reset}>Female</Text>
+                    <Text style={styles._reset}>Woman</Text>
                     <Entypo name="chevron-small-right" size={24} color="black" />
                   </TouchableOpacity>
                 </View>
@@ -211,8 +227,11 @@ class Favourite extends React.Component {
 
               {/* <<<<<<<<<<<<<<<<<<<<<<< Match Sound >>>>>>>>>>>>>>>>>>>>> */}
               <View style={styles._bottm_sheet_main}>
-                <Text style={styles._location}>Match Sound</Text>
-                <View style={{ marginRight: -5 }}>
+                <View style={styles._text_area}>
+                  <Text style={styles._location}>Match Sound</Text>
+                </View>
+
+                <View style={styles._button_area}>
                   <Togglebuttom />
                 </View>
               </View>
@@ -343,6 +362,15 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     paddingTop: 7,
     color: "white"
+  },
+  _text_area: {
+    // backgroundColor: "red",
+    width: "80%"
+  },
+  _button_area: {
+    // backgroundColor: "green",
+    width: "20%"
+
   }
 
 });

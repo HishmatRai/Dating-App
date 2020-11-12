@@ -9,6 +9,7 @@ const screen = Dimensions.get("screen");
 
 const EditEnfo = (props) => {
     const [dimensions, setDimensions] = useState({ window, screen });
+    const [selectedValue, setSelectedValue] = useState("java");
 
     const onChange = ({ window, screen }) => {
         setDimensions({ window, screen });
@@ -21,7 +22,6 @@ const EditEnfo = (props) => {
         };
     });
 
-    const [selectedValue, setSelectedValue] = useState("java");
     useEffect(() => {
         Dimensions.addEventListener("change", onChange);
         return () => {
@@ -66,12 +66,12 @@ const EditEnfo = (props) => {
                                 onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
 
                             >
-                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="java" />
-                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
-                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
-                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
-                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
-                                <Picker.Item label="Hard Work, Chairty , Gun Fight, Humanilism" value="js" />
+                                <Picker.Item label="Hard Work, Chairty , Gun Fight" value="java" />
+                                <Picker.Item label="Gun Fight, Humanilism" value="js" />
+                                <Picker.Item label="Hard Work,   Humanilism" value="js1" />
+                                <Picker.Item label="Hard Work, Chairty " value="js2" />
+                                <Picker.Item label="Hard Work , Gun Fight, Humanilism" value="js3" />
+                                <Picker.Item label=" Chairty , Gun Fight, Humanilism" value="js5" />
                             </Picker>
                         </View>
 
@@ -123,12 +123,12 @@ const EditEnfo = (props) => {
 
 
                     {/* <<<<<<<<<<<< Account Setting >>>>>>>>>>>> */}
-                    <View style={{ marginTop: 20 }}>
+                    {/* <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Show My Instagram Photos</Text>
                         <TouchableOpacity style={styles._mob_number_setting_main}>
                             <Text style={styles._connect_instagram}>Connect Instagram</Text>
                         </TouchableOpacity>
-                    </View>
+                    </View> */}
 
                     {/* <<<<<<<<<<<< Control Your Profile >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>

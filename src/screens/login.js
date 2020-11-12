@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text, Dimensions, ImageBackground, TouchableOpacity, ScrollView, Image } from "react-native";
+import { View, StyleSheet, Text, Dimensions, ImageBackground, TouchableOpacity, ScrollView, Image ,StatusBar} from "react-native";
 import { TextInput } from 'react-native-paper';
 import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
@@ -26,11 +26,11 @@ const Login = (props) => {
 
     return (
         <View style={styles.container}>
-
+<StatusBar barStyle="dark-content" hidden={true} backgroundColor="white" translucent={true} />
             <ImageBackground source={require('./../../assets/login_background.png')} style={styles._image}>
                 <View style={{ margin: 20 }}>
                     <ScrollView style={styles.scrollView}>
-                        <Image source={require('./../../assets/wel_logo.png')} style={styles._logo} />
+                        <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
 
                         <Text style={styles._heading}>Login</Text>
                         {/* <<<<<<<< Email >>>>>>>>> */}
@@ -133,10 +133,10 @@ const styles = StyleSheet.create({
         height: "100%"
     },
     _logo: {
-        width: 229,
-        height: 42,
+        width: 269,
+        height: 56,
         alignSelf: "center",
-        marginTop: 60
+        marginTop: 50
     },
     _heading: {
         color: "#2545A3",

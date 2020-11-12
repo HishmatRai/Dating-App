@@ -109,16 +109,16 @@ const Profile = (props) => {
                         </View>
 
                         <View style={styles._sub_main}>
-                            <Ionicons name="ios-heart-empty" size={20} color="gray" />
+                            <Ionicons name="ios-heart-empty" size={20} color="gray" style={{marginRight:5}}/>
                             <Text style={styles._counter}>32k</Text>
                             <Text style={styles._subscription}>Likes</Text>
                         </View>
 
-                        <View style={styles._sub_main}>
+                        {/* <View style={styles._sub_main}>
                             <MaterialCommunityIcons name="email-outline" size={20} color="gray" />
                             <Text style={styles._counter}>38</Text>
                             <Text style={styles._subscription}>Likes</Text>
-                        </View>
+                        </View> */}
 
                         {/* <View style={styles._sub_main}>
                             <Ionicons name="ios-information-circle-outline" size={24} color="gray" />

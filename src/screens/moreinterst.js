@@ -77,7 +77,7 @@ const Moreinterest = (props) => {
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
             {/* <<<<<<<<<<<<<<<<<<<<<<<<<<   LOGO SECTION  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
             <ScrollView style={{ margin: 20 }} showsVerticalScrollIndicator={false} >
-                <Image source={require('./../../assets/smalllogo.png')} style={styles._logo} />
+                <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
 
                 {/* <<<<<<<< Name <<<<<<<< */}
                 <View style={styles._name_main}>
@@ -211,7 +211,17 @@ const Moreinterest = (props) => {
                 {/* <<<<<<<< Add Photos <<<<<<<< */}
                 <Text style={styles._gender}>Add Photos</Text>
                 <View style={styles._add_photos_main}>
-                    <ScrollView horizontal={true}>
+                    <View>
+                        <View style={styles._add_photos_view}>
+                        </View>
+                        <TouchableOpacity style={styles._add_icon}
+                            onPress={() => openGallert()}
+                        >
+
+                            <Ionicons name="md-add-circle" size={24} color="#CA2C30" />
+                        </TouchableOpacity>
+                    </View>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 
                         {images.length !== 1
                             ? images.map((val, i) => {
@@ -226,32 +236,6 @@ const Moreinterest = (props) => {
                             null
                         }
                     </ScrollView>
-                    {/* <Image source={require('./../../assets/addphoto1.png')} style={styles._add_photos_show} /> */}
-                    <View>
-                        {/* <View style={styles._add_photos_view}>
-                            {galleryPic === null
-                                ? null
-                                :
-                                <Image source={require('./../../assets/addphoto1.png')} style={styles._add_photos_show} />
-                            }
-                        </View> */}
-                        {/* <TouchableOpacity style={styles._add_icon}
-                            onPress={() => openGallert()}
-                        >
-                            <Ionicons name="md-add-circle" size={24} color="#CA2C30" />
-                        </TouchableOpacity> */}
-                    </View>
-
-                    <View>
-                        <View style={styles._add_photos_view}>
-                        </View>
-                        <TouchableOpacity style={styles._add_icon}
-                            onPress={() => openGallert()}
-                        >
-
-                            <Ionicons name="md-add-circle" size={24} color="#CA2C30" />
-                        </TouchableOpacity>
-                    </View>
                 </View>
 
 
@@ -285,8 +269,8 @@ const styles = StyleSheet.create({
         backgroundColor: "white"
     },
     _logo: {
-        width: 143,
-        height: 26,
+        width: 200,
+        height: 40,
         alignSelf: "center",
         marginTop: 60,
         marginBottom: 50
@@ -455,8 +439,8 @@ const styles = StyleSheet.create({
     },
     _add_icon: {
         alignSelf: "flex-end",
-        marginTop: -20,
-        marginLeft: 70
+        marginTop: -25,
+        marginLeft: 60,
 
     },
     _date_picker: {

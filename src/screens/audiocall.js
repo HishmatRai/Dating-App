@@ -4,14 +4,14 @@ import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-
+import { Feather } from '@expo/vector-icons';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 const AudioCall = (props) => {
     const [dimensions, setDimensions] = useState({ window, screen });
     const [text, setText] = React.useState('');
     const [text2, setText2] = React.useState('');
-
+    const [soundMode, setSoundMode] = useState(true);
     const onChange = ({ window, screen }) => {
         setDimensions({ window, screen });
     };
@@ -40,20 +40,24 @@ const AudioCall = (props) => {
                             onPress={() => props.navigation.navigate("Message")} >
                             <Ionicons name="ios-chatbubbles" size={24} color="white" />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._bottom_button}>
+                        {/* <TouchableOpacity style={styles._bottom_button}>
                             <MaterialIcons name="keyboard-voice" size={24} color="white" />
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                         <TouchableOpacity style={styles._call_end_button}
-                        onPress={() => props.navigation.goBack()}>
+                            onPress={() => props.navigation.goBack()}>
                             <MaterialIcons name="call-end" size={34} color="white" />
                         </TouchableOpacity>
                         <TouchableOpacity style={styles._bottom_button}
                             onPress={() => props.navigation.navigate("Vodeocall")}>
                             <Ionicons name="ios-videocam" size={24} color="white" />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._bottom_button}>
-                            <FontAwesome name="volume-up" size={24} color="white" />
-                        </TouchableOpacity>
+                        {/* <TouchableOpacity style={styles._bottom_button}>
+
+                            {soundMode
+                                ? <Feather name="volume-2" size={24} color="white" />
+                                : <Feather name="volume-x" size={24} color="white" />
+                            }
+                        </TouchableOpacity> */}
                     </View>
 
 

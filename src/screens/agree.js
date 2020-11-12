@@ -24,7 +24,7 @@ const Agree = (props) => {
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
             {/* <<<<<<<<<<<<<<<<<<<<<<<<<<   LOGO SECTION  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
             <ScrollView style={{ margin: 20 }}>
-                <Image source={require('./../../assets/wel_logo.png')} style={styles._logo} />
+                <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
                 <Text style={styles._roles}>Please follow these house rules</Text>
 
                 {/* <<<<<<<    01 >>>>>>>>>>> */}
@@ -34,7 +34,7 @@ const Agree = (props) => {
                     </View>
                     <View style={styles._heading_main}>
                         <Text style={styles._heading}>Be Yourself</Text>
-                        <Text style={styles._dis}>Make sure your photos, age and bio are ture to who you are.</Text>
+                        <Text style={styles._dis}>Make sure your photos, age and bio are true to who you are.</Text>
                     </View>
                 </View>
 
@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
         backgroundColor: "white"
     },
     _logo: {
-        width: 229,
-        height: 42,
+        width: 250,
+        height: 52,
         alignSelf: "center",
         marginTop: 60
     },
