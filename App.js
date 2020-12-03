@@ -5,6 +5,7 @@ import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import Navigation from './src/navigation/navigation'
+import Screen from './../AwesomeProject/src/screens/explore'
 import Getstart from './src/screens/getstart'
 export default class App extends React.Component {
   constructor(props) {
@@ -54,7 +55,7 @@ export default class App extends React.Component {
       this.state.showMe ?
         <Getstart />
         :
-        <Navigation />
+        <Screen />
     )
   }
 }

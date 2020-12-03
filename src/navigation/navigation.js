@@ -23,6 +23,7 @@ import Vodeocall from './../screens/videocall'
 import AudioCall from './../screens/audiocall'
 import lastMatches from './../screens/last_matches'
 import Camera from './../screens/camera'
+import Addper from './../screens/otherapp/addper'
 const Tab = createBottomTabNavigator();
 function BottomNavigation() {
   return (
@@ -64,7 +65,7 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        {/* <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Agree" component={Agree} options={{ headerShown: false }} />
         <Stack.Screen name="Setting" component={Setting} options={{ headerShown: false }} />
         <Stack.Screen name="Editinfo" component={Editinfo} options={{ headerShown: false }} />
@@ -76,7 +77,8 @@ function Navigation() {
         <Stack.Screen name="AudioCall" component={AudioCall} options={{ headerShown: false }} />
         <Stack.Screen name="Camera" component={Camera} options={{ headerShown: false }} />
         <Stack.Screen name="lastMatches" component={lastMatches} options={{ headerShown: false }} />
-        <Stack.Screen name="Home" component={BottomNavigation} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={BottomNavigation} options={{ headerShown: false }} /> */}
+        <Stack.Screen name="Addper" component={Addper} options={{ headerShown: false }} />
 
       </Stack.Navigator>
     </NavigationContainer>
